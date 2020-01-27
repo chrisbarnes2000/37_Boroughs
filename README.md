@@ -1,2 +1,2 @@
-# 37 Burrows 
+# 37 Boroughs 
 ## Created by: Ariane, Ian, Constantino, Chris, Alanna
