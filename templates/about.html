@@ -1,0 +1,25 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mt-3">
+    <h1>About Page</h1>
+</div>
+<div class="row mt-3">
+    <h2>Locational Trivia is a game for people who travel or like to learn about other places.</h2>
+    
+    <h4 style="width: 100%;">Originally designed to be a class project, its implementation is to help one learn about different locations and their: </h4>
+
+    <ul>
+        <li>Population,</li>
+        <li>Common Languages,</li>
+        <li>Attractions & Land Marks</li>
+    </ul>
+
+    <h3>Its aim is to accomplish this on the <a href="{% url 'list-page' %}">Locations Page</a> by providing each location its own background page of knowledge. Each page shall contain reference links to other external sites with our gathered knowledge and shall provide short descriptions over the specified location and the above options.
+    <br>
+    <br>
+    There will also be a quiz game to challenge your friends and family on the different trivia provided to see who knows the most about other places.</h3>
+
+</div>
+{% endblock %}

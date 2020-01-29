@@ -1,10 +1,12 @@
 # PROJECT TITLE: 37 Boroughs
 
-## PURPOSE OF PROJECT: 
+## Created by: Alanna, Ariane, Chris, Constantino, Ian
+
+### PURPOSE OF PROJECT: 
 
 The goal of this project is to provide a platform for photographers, travelers, and businesses alike to be able to share photos of their local or favorite community.
 
-### Dependencies/USER INSTRUCTIONS :
+### Dependencies & USER INSTRUCTIONS :
 Dependencies are added to the `requirements.txt` file. 
 
 Usage of virtualenv is highly recommended. Please use the following steps to install this django project. 
@@ -24,6 +26,4 @@ Use the following to set up the project
 ### HOW TO START THIS PROJECT
 
 > $ python3 manage.py runserver
-
-#### AUTHORS: Alanna, Ariane, Chris, Constantino, Ian
 
