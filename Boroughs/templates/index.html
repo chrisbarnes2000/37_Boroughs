@@ -1,0 +1,10 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Welcome to 37 Boroughs!!!</h1>
+
+<div class="row justify-content-center">
+    <h3>If you're new to the site, please visit our <a href="{% url 'about' %}">about page</a> for more information.</h3>
+</div>
+{% endblock %}
