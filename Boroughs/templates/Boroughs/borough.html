@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col m-4">
+        <div class="row">
+            <h1>
+                {{ borough.title }}
+                <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
+                    {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
+            </h1>
+            {% if user.is_authenticated and user.is_staff %}
+            <!-- <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a> -->
+            {% endif %}
+        </div>
+        <hr>
+        <div class="row mt-3">
+            <div class="col" style="margin-top: 3em; margin-bottom: 5em;">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores neque ullam ut, eveniet ratione eos,
+                    fuga tempora vero ex a illo qui sint quo odio, fugit odit quibusdam itaque nihil. Lorem ipsum dolor sit
+                    amet, consectetur adipisicing elit. Aliquam, non, doloremque veniam consequuntur laborum tempore odit
+                    tempora eum dolores fugiat minus, blanditiis possimus quis omnis soluta molestiae nobis magni sunt? 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit error earum nihil accusamus
+                    necessitatibus reprehenderit dignissimos modi ducimus laudantium deserunt similique numquam fugiat
+                    obcaecati porro, quos aperiam expedita. Vero.
+                </p>
+            </div>
+            <div class="col text-center">
+                <a href="https://placeholder.com"><img
+                        src="https://via.placeholder.com/250x250?text=Image+of+this+place"></a>
+            </div>
+        </div>
+        <p>{{ borough.content|linebreaksbr }}</p>
+        <hr>
+        <a href="{% url 'boroughs' %}" class="btn btn-success">Back to List</a>
+    </div>
+</div>
+{% endblock %}

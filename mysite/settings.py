@@ -118,11 +118,11 @@ USE_TZ = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 # if os.getenv('IS_ON_HEROKU', False):
 STATICFILE_DIRECTORY = 'static'
@@ -133,8 +133,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATICFILE_DIRECTORY)
 ]
 
-# location app settings
-PAGE_TITLE_MAX_LENGTH = 600
+# BOROUGH app settings
+BOROUGH_TITLE_MAX_LENGTH = 600
 
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"

@@ -1,0 +1,15 @@
+<div class="card mb-3">
+    <h5 class="card-header ">{{ borough.title }</h5>
+    <div class="card-body border-dark">
+    <img src="{{ borough.borough_Main_Img.url }}" class="img-responsive"
+        style="width: 100%; float: left; margin-right: 10px;" />
+        <p class="card-text">
+                {{ borough.content|truncatewords_html:30 }}
+                <hr>
+                <div class="text-right"><a href="{% url 'borough-detail-page' borough.slug %}" title="Read More">Read More</a></div>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ borough.author.username }}</b></small>
+    </div>
+</div>
+

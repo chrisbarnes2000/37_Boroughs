@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Discovered {% if Boroughs %}<small class="text-muted">({{ Boroughs|length }} Borough{{ Boroughs|length|pluralize:"s" }})</small>{% endif %}</h1>
+  <hr>
+  {% if Boroughs %}
+    {% include 'partials/card.html' %}
+  {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+  {% endif %}
+{% endblock %}
+
+

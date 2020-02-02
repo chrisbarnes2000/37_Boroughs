@@ -1,17 +1,32 @@
 from django.shortcuts import render, redirect
-from .forms import *
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic import *
+from .forms import *
 
 
-def Index(request):
-    return render(request, 'index.html')
+def logout_view(request):
+    logout(request)
 
 
-def About(request):
-    return render(request, 'about.html')
+class display_boroughs(ListView):
+    template_name = 'Boroughs/display_boroughs.html'
+    context_object_name = 'Boroughs'
+
+    def get_queryset(self):
+        return Borough.objects.all()
+
+
+class BoroughDetailView(DetailView):
+    model = Borough
+    template_name = 'Boroughs/borough.html'
+
+
+class DeleteBorough(DeleteView):
+    model = Borough
+    success_url = reverse_lazy('index')
 
 
 def image_upload_view(request):
@@ -29,10 +44,3 @@ def image_upload_view(request):
 
 def success(request):
     return HttpResponse('successfully uploaded')
-
-
-def display_boroughs(request):
-    template_name = 'display_boroughs.html'
-    if request.method == 'GET':
-        Boroughs = Borough.objects.all()
-        return render(request, template_name, {'Boroughs': Boroughs})

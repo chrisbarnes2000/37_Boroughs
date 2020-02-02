@@ -6,11 +6,21 @@ from django.conf.urls.static import static
 from Boroughs.views import *
 
 urlpatterns = [
-    path('', Index, name='index'),
-    path('About/', About, name='about'),
-    path('Boroughs/', display_boroughs, name='Boroughs'),
-    path('image_upload/', image_upload_view, name='image_upload'),
+    # Boroughs Pages list of all pages
+    path('', display_boroughs, name='boroughs'),
+
+    # ex: Boroughs/chinatown/
+    path('<str:slug>/', BoroughDetailView.as_view(), name='borough-detail-page'),
+
+    # Contribution Page to Upload Images
+    path('contribute/', image_upload_view, name='image_upload'),
+
+    # Success Page for redirects
     path('success/', success, name='success'),
+
+    # ex: delete/chinatown/
+    path('delete/<str:slug>/', DeleteBorough.as_view(), name='delete-borough'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
