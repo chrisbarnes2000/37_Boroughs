@@ -1,5 +1,10 @@
+<!-- templates/partials/image_upload_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload An Image</button>
 </form>
+{% endblock %}

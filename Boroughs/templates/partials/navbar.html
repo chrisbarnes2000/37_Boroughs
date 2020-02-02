@@ -1,3 +1,4 @@
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-xl navbar-light">
     <div class="container">
         <a class="navbar-brand" href="#"><b>37</b>BOROUGHS</a>
@@ -5,10 +6,12 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -16,23 +19,26 @@
                         Boroughs
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="{% url 'Boroughs' %}">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contribute</a>
+                    <a class="nav-link" href="{% url 'image_upload' %}">Contribute</a>
                 </li>
             </ul>
+
+
             <ul class="socials">
                 <i class="fab fa-twitter"></i>
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-instagram"></i>
             </ul>
+
         </div>
 
     </div>

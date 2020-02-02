@@ -58,9 +58,10 @@ h2 {
 .ul {
     padding-left: none;
 }
+
 .socials {
     align-content: end;
-    margin: auto 0 auto 0;
+    /* margin: auto 0 auto 0; */
     padding-inline-start: 0;
 }
 
