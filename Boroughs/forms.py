@@ -6,4 +6,4 @@ from .models import *
 class BoroughForm(forms.ModelForm):
     class Meta:
         model = Borough
-        fields = ['title', 'borough_Main_Img']
+        fields = ['title', 'content', 'Main_Img']
