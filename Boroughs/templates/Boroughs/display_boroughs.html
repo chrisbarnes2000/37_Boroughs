@@ -4,7 +4,11 @@
   <h1>Discovered {% if Boroughs %}<small class="text-muted">({{ Boroughs|length }} Borough{{ Boroughs|length|pluralize:"s" }})</small>{% endif %}</h1>
   <hr>
   {% if Boroughs %}
-    {% include 'partials/card.html' %}
+    <div class="card-columns">
+        {% for borough in Boroughs %}
+            {% include "partials/card.html" %}
+        {% endfor %}
+    </div>
   {% else %}
     <div class="alert alert-primary" role="alert">No pages to display.</div>
   {% endif %}
