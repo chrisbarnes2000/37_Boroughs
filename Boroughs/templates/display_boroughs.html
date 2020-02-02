@@ -1,0 +1,7 @@
+{% for borough in Boroughs %}
+<div class="col-md-4">
+    {{ borough.name }}
+    <img src="{{ borough.borough_Main_Img.url }}" class="img-responsive"
+        style="width: 100%; float: left; margin-right: 10px;" />
+</div>
+{% endfor %}

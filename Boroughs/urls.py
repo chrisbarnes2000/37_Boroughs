@@ -8,8 +8,9 @@ from Boroughs.views import *
 urlpatterns = [
     path('', Index, name='index'),
     path('About/', About, name='about'),
-    path('image_upload', hotel_image_view, name='image_upload'),
-    path('success', success, name='success'),
+    path('Boroughs/', display_boroughs, name='Boroughs'),
+    path('image_upload/', image_upload_view, name='image_upload'),
+    path('success/', success, name='success'),
 ] 
 
 if settings.DEBUG:

@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.shortcuts import render
 
+
 def Index(request):
     return render(request, 'index.html')
 
@@ -12,17 +13,26 @@ def Index(request):
 def About(request):
     return render(request, 'about.html')
 
-def hotel_image_view(request):
-    if request.method == 'POST':
-        form = HotelForm(request.POST, request.FILES)
 
-    if form.is_valid():
-        form.save()
-        return redirect('success')
+def image_upload_view(request):
+    template_name = 'partials/image_upload_form.html'
+    if request.method == 'POST':
+        form = BoroughForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success')
     else:
-        form = HotelForm()
-        return render(request, 'hotel_image_form.html', {'form': form})
+        form = BoroughForm()
+        return render(request, template_name, {'form': form})
 
 
 def success(request):
     return HttpResponse('successfully uploaded')
+
+
+def display_boroughs(request):
+    template_name = 'display_boroughs.html'
+    if request.method == 'GET':
+        Boroughs = Borough.objects.all()
+        return render(request, template_name, {'Boroughs': Boroughs})
