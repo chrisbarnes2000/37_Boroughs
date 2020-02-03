@@ -11,6 +11,10 @@ p {
     letter-spacing: 0px;
 }
 
+small {
+    font-size: 50% !important;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 400;
