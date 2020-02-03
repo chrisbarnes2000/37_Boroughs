@@ -10,6 +10,17 @@ def logout_view(request):
     logout(request)
 
 
+# Create_Borough_View
+class Create_Borough_View(CreateView):
+    model = Borough
+    fields = ['title', 'content', 'Main_Img']
+#     template_name = 'Boroughs/borough_form.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
 class Display_Boroughs_View(ListView):
     template_name = 'Boroughs/display_boroughs.html'
     context_object_name = 'Boroughs'
@@ -35,29 +46,6 @@ class Edit_Borough_View(UpdateView):
 class Delete_Borough_View(DeleteView):
     model = Borough
     success_url = reverse_lazy('index')
-
-
-# Create_Borough_View
-# class image_upload_view(CreateView):
-#     model = Borough
-#     fields = ['title', 'content', 'Main_Img']
-
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
-
-
-def image_upload_view(request):
-    template_name = 'partials/image_upload_form.html'
-    if request.method == 'POST':
-        form = BoroughForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    else:
-        form = BoroughForm()
-        return render(request, template_name, {'form': form})
 
 
 def success(request):

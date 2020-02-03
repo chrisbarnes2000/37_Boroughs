@@ -10,7 +10,7 @@ urlpatterns = [
     path('', Display_Boroughs_View.as_view(), name='boroughs'),
 
     # Contribution Page to Upload Images
-    path('contribute/', image_upload_view, name='image_upload'),
+    path('contribute/', Create_Borough_View.as_view(), name='image_upload'),
 
     # Success Page for redirects
     path('success/', success, name='success'),
