@@ -24,6 +24,10 @@ h2 {
     margin: 0 0 1rem 0;
 }
 
+footer {
+    text-align: center;
+}
+
 .navbar {
     border-bottom: 1px solid;
 }
@@ -77,4 +81,10 @@ h2 {
 .form-group > .col-sm {
     padding: none;
 }
+
+#sf {
+    width: 400px;
+    margin: 150px 35px 0 0;
+}
+
 
