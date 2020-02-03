@@ -60,6 +60,11 @@ img {
     color: #fff;
 }
 
+.active {
+    background-color: #141414;
+    color: #fff;
+}
+
 .navbar-light .navbar-nav .nav-link {
     padding: 0.3rem 1.5rem;
 }
