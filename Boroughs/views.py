@@ -14,7 +14,6 @@ def logout_view(request):
 class Create_Borough_View(CreateView):
     model = Borough
     fields = ['title', 'content', 'Main_Img']
-#     template_name = 'Boroughs/borough_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -36,7 +35,7 @@ class Detail_Borough_View(DetailView):
 
 class Edit_Borough_View(UpdateView):
     model = Borough
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'Main_Img']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

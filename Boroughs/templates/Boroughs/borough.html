@@ -16,22 +16,16 @@
         <hr>
         <div class="row mt-3">
             <div class="col" style="margin-top: 3em; margin-bottom: 5em;">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores neque ullam ut, eveniet ratione eos,
-                    fuga tempora vero ex a illo qui sint quo odio, fugit odit quibusdam itaque nihil. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit. Aliquam, non, doloremque veniam consequuntur laborum tempore odit
-                    tempora eum dolores fugiat minus, blanditiis possimus quis omnis soluta molestiae nobis magni sunt? 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur fugit error earum nihil accusamus
-                    necessitatibus reprehenderit dignissimos modi ducimus laudantium deserunt similique numquam fugiat
-                    obcaecati porro, quos aperiam expedita. Vero.
+                <p>{{ borough.content|linebreaksbr }}
+
+                    {{ borough.Main_Img.url }}
                 </p>
             </div>
             <div class="col text-center">
-                <a href="https://placeholder.com"><img
-                        src="https://via.placeholder.com/250x250?text=Image+of+this+place"></a>
+                <img class="img-responsive" src="" alt="Main Borough Image" />
             </div>
         </div>
-        <p>{{ borough.content|linebreaksbr }}</p>
+        
         <hr>
         <a href="{% url 'boroughs' %}" class="btn btn-success">Back to List</a>
     </div>

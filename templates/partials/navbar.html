@@ -14,12 +14,13 @@
                     <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Boroughs
-                    </a>
+                    <a href="{% url 'boroughs' %}"><button type="button" class="btn">Boroughs</button></a>
+                    <button type="button" class="btn dropdown-toggle dropdown-toggle-split" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only"></span>
+                    </button>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{% url 'boroughs' %}">Action</a>
+                        <a class="dropdown-item" href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
