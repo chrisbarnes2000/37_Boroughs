@@ -27,6 +27,19 @@ h2 {
 footer {
     text-align: center;
 }
+img {
+    width: 100%;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.43;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
 
 .navbar {
     border-bottom: 1px solid;
