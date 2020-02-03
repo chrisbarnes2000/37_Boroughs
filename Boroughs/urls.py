@@ -7,7 +7,7 @@ from Boroughs.views import *
 
 urlpatterns = [
     # Boroughs Pages list of all pages
-    path('', display_boroughs.as_view(), name='boroughs'),
+    path('', Display_Boroughs_View.as_view(), name='boroughs'),
 
     # Contribution Page to Upload Images
     path('contribute/', image_upload_view, name='image_upload'),
@@ -15,11 +15,15 @@ urlpatterns = [
     # Success Page for redirects
     path('success/', success, name='success'),
 
-    # ex: delete/chinatown/
-    path('delete/<str:slug>/', DeleteBorough.as_view(), name='delete-borough'),
+    # ex: /Boroughs/chinatown/
+    path('<str:slug>/', Detail_Borough_View.as_view(), name='borough-details'),
 
-    # ex: Boroughs/chinatown/
-    path('<str:slug>/', BoroughDetailView.as_view(), name='borough-detail-page'),
+    # ex: /Boroughs/chinatown/edit/
+    path('<str:slug>/edit/', Edit_Borough_View.as_view(), name='edit-borough'),
+
+    # ex: /Boroughs/chinatown/delete/
+    path('<str:slug>/delete/', Delete_Borough_View.as_view(), name='delete-borough'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

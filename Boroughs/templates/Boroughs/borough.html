@@ -9,10 +9,10 @@
                 <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
                     {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
             </h1>
-            {% if user.is_authenticated and user.is_staff %}
-            <!-- <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a> -->
-            {% endif %}
+            <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a>
         </div>
+        <!-- {% if user.is_authenticated and user.is_staff %} -->
+        <!-- {% endif %} -->
         <hr>
         <div class="row mt-3">
             <div class="col" style="margin-top: 3em; margin-bottom: 5em;">

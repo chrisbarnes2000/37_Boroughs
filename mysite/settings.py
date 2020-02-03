@@ -24,7 +24,7 @@ SECRET_KEY = 'l4shpmzs!m(4rqq5smw^yh-syf+i_h()%e)p_p=1x+jbd_!)a-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -119,22 +119,19 @@ USE_TZ = True
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# if os.getenv('IS_ON_HEROKU', False):
 STATICFILE_DIRECTORY = 'static'
-# else:
-# STATICFILE_DIRECTORY = 'static/assets'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATICFILE_DIRECTORY)
 ]
 
 # BOROUGH app settings
-BOROUGH_TITLE_MAX_LENGTH = 600
+BOROUGH_TITLE_MAX_LENGTH = 200
 
 # Where to redirect during authentication
 LOGIN_REDIRECT_URL = "/"

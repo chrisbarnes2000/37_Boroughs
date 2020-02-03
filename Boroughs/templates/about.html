@@ -1,17 +1,15 @@
 <!-- templates/about.html -->
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="row mt-3">
     <h1>About Page</h1>
 </div>
 <div class="row mt-3">
-    <h2>37 Boroughs is a game for people who love photography or like to learn about other places.</h2>
+    <button><a href="{% url 'index' %}">Back to Home Page</a></button>
+    <h2>37 Boroughs is a platform for people who love photography or like to learn about other places.</h2>
 
-    <!-- <img src="/Users/ChrisBarnes/dev/courses/SPD1.3/37_Boroughs/media/images/Chinatown/Image1.png" alt="Chinatown Image #1"> -->
-
-    <!-- <img src="../static/Images/Splash.gif" class="img-responsive" style="width: 100%; float: left" alt="Chinatown Image #1"/> -->
-
-    <a href="{% url 'index' %}">Back to Home Page</a>
+    <img class="img-responsive" src="{% static 'Images/Chinatown/main-image.png' %}"
+        style="width: 100%; float: right; clear: both;" alt="Chinatown Image #1" />
 </div>
 {% endblock %}
