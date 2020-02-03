@@ -3,6 +3,7 @@
     <h5 class="card-header ">{{ borough.title }}</h5>
 
     <div class="card-body border-dark">
+        {{ borough.Main_Img.url }}
         <img class="card-image img-responsive" src="{{ borough.Main_Img.url }}" alt="Main Borough Image"/>
         <img class="card-image img-responsive mt-2" src="{% static 'Images/reddivider.png' %}" alt="Red Divider">
         <p class="card-text">
