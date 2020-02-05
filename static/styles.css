@@ -30,6 +30,7 @@ h2 {
 }
 
 footer {
+    margin-top: 3em;
     text-align: center;
 }
 
@@ -113,13 +114,13 @@ img {
 }
 
 .card-image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     float: left;
     margin-right: 10px;
 }
 
 #sf {
     width: 400px;
-    margin: 150px 35px 0 0;
+    /* margin: 150px 35px 0 0; */
 }
