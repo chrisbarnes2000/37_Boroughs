@@ -124,3 +124,7 @@ img {
     width: 400px;
     /* margin: 150px 35px 0 0; */
 }
+
+label {
+    color: red;
+}

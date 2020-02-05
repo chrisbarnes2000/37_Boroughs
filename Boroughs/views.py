@@ -2,21 +2,28 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.urls import reverse_lazy
 from django.http import HttpResponse
-from Boroughs.models import Borough
+from Boroughs.models import Borough, Photo
 from django.views.generic import *
-from Boroughs.forms import *
 
 def logout_view(request):
     logout(request)
 
 
-# Create_Borough_View
 class Create_Borough_View(CreateView):
     model = Borough
     fields = ['title', 'content', 'Main_Img']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class Create_Photo_View(CreateView):
+    model = Photo
+    fields = ['first_name', 'last_name', 'email', 'content', 'image']
+
+    def form_valid(self, form):
+        # form.instance.author = self.request.user
         return super().form_valid(form)
 
 

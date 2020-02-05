@@ -9,8 +9,9 @@ urlpatterns = [
     # Boroughs Pages list of all pages
     path('', Display_Boroughs_View.as_view(), name='boroughs'),
 
-    # Contribution Page to Upload Images
-    path('contribute/', Create_Borough_View.as_view(), name='image_upload'),
+    # Contribution Pages to Upload Images
+    path('contribute/borough', Create_Borough_View.as_view(), name='create-borough'),
+    path('contribute/photo', Create_Photo_View.as_view(), name='image-upload'),
 
     # Success Page for redirects
     path('success/', success, name='success'),
