@@ -1,0 +1,57 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Welcome to 37 Boroughs!</h1>
+
+<br>
+
+<div class="row">
+    <div class="col">
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus
+            est Lorem ipsum dolor sit amet</p>
+
+        <form>
+            <div class="form-group form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <input type="text-form" class="form-control" placeholder="Last name">
+                </div>
+            </div>
+        </form>
+
+        <br><hr><br>
+
+        <p>If you're new to the site, please visit our <a href="{% url 'about' %}">about page</a> for more information.
+        </p>
+        
+        <p>If you want to contribute to the site, please visit the <a href="{% url 'image_upload' %}">upload page</a> for
+            more information.</p>
+        
+        <p><a href="{% url 'boroughs' %}">View already uploaded Photos.</a></p>
+
+    </div>
+    <div class="col">
+        <img src="static/Images/Splash.gif" class="img-responsive" style="width: 100%; float: left;" />
+    </div>
+</div>
+{% endblock %}

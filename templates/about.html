@@ -2,14 +2,78 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="row mt-3">
-    <h1>About Page</h1>
-</div>
-<div class="row mt-3">
-    <button><a href="{% url 'index' %}">Back to Home Page</a></button>
-    <h2>37 Boroughs is a platform for people who love photography or like to learn about other places.</h2>
-
-    <img class="img-responsive" src="{% static 'Images/Chinatown/main-image.png' %}"
-        style="width: 100%; float: right; clear: both;" alt="Chinatown Image #1" />
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img id="sf" src="/37_Boroughs/frontend/images/liam-simpson-xEfD43rkezo-unsplash.jpg" alt="Golden Gate">
+            </div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'Images/Creators/Chris.jpg' %}" class="card-image img-fluid" alt="Creator Chris">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'Images/Creators/Ariane.jpg' %}" class="card-image img-fluid" alt="Creator Ariane">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'Images/Creators/Alanna.jpg' %}" class="card-image img-fluid" alt="Creator Alanna">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'Images/Creators/Ian.jpg' %}" class="card-image img-fluid" alt="Creator Ian">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'Images/Creators/Constantino.jpg' %}" class="card-image img-fluid" alt="Creator Constantino">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

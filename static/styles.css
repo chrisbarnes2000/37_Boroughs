@@ -12,7 +12,8 @@ p {
 }
 
 small {
-    font-size: 50% !important;
+    font-size: 45% !important;
+    text-transform: none;
 }
 
 h1 {
@@ -26,6 +27,23 @@ h2 {
     font-size: 2rem;
     font-weight: 400;
     margin: 0 0 1rem 0;
+}
+
+footer {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.43;
+    background-color: #fff;
+    border-radius: 3px;
 }
 
 .navbar {
@@ -43,6 +61,11 @@ h2 {
 }
 
 .navbar-light .navbar-nav .active > .nav-link {
+    background-color: #141414;
+    color: #fff;
+}
+
+.active {
     background-color: #141414;
     color: #fff;
 }
@@ -83,8 +106,20 @@ h2 {
     padding: none;
 }
 
-.card-image {
+.card-img {
     width: 100%;
     float: right;
     /* margin-right: 10px; */
+}
+
+.card-image {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right: 10px;
+}
+
+#sf {
+    width: 400px;
+    margin: 150px 35px 0 0;
 }
