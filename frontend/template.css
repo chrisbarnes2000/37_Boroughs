@@ -23,6 +23,15 @@ h2 {
     font-weight: 400;
     margin: 0 0 1rem 0;
 }
+h3 {
+    position: absolute;
+    border: 1px solid white;
+    width: 225px;
+    height: 50px;
+    background-color: lightgray;
+    opacity: 1;
+    color: white;
+}
 
 footer {
     text-align: center;
@@ -60,7 +69,7 @@ img {
     color: #fff;
 }
 
-.active {
+.submit {
     background-color: #141414;
     color: #fff;
 }
@@ -100,9 +109,66 @@ img {
     padding: none;
 }
 
+.columns img {
+    margin: 8px 8px;
+}
+
 #sf {
     width: 400px;
     margin: 150px 35px 0 0;
+}
+
+#pacific {
+    right: 109px;
+    top: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#chinatown {
+    left: 110px;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#marina {
+    left: 35px;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#norbeach {
+    left: 35px;
+    top: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#soma {
+    right: 35px;
+    top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 65%;
+}
+.container:nth-child(2){
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.columns img {
+    display: flex;
+    padding: 16px;
+    position: relative;
+}
+.gallery-pic {
+    margin-bottom: 13px;
 }
 
 
