@@ -1,1 +1,1 @@
-NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program web: gunicorn mysite.wsgi --log-file -
+web: gunicorn mysite.wsgi --log-file -
