@@ -17,6 +17,7 @@ packaging==20.1
 pilkit==2.0
 Pillow==7.0.0
 pluggy==0.13.1
+psycopg2-binary==2.8.4
 py==1.8.1
 pycodestyle==2.5.0
 pylint==2.4.4
