@@ -2,7 +2,7 @@ asgiref==3.2.3
 astroid==2.3.3
 attrs==19.3.0
 autopep8==1.5
-Django==3.0.2
+Django==3.0.3
 django-appconf==1.0.3
 django-db==0.0.7
 django-imagekit==4.0.2
