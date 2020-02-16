@@ -5,7 +5,7 @@
     <div class="card-body border-dark">
         {{ borough.Main_Img.url }}
         <img class="card-img img-responsive" src="{{ borough.Main_Img.url }}" alt="Main Borough Image"/>
-        <img class="card-img img-responsive mt-2" src="{% static 'Images/reddivider.png' %}" alt="Red Divider">
+        <img class="card-img img-responsive mt-2" src="{% static 'images/reddivider.png' %}" alt="Red Divider">
         <p class="card-text">
             {{ borough.content|truncatewords_html:30 }}
             <hr>
