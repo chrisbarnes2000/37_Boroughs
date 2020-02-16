@@ -72,7 +72,7 @@ img {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    padding: 0.3rem 1.5rem;
+    padding: 0.3rem 1.5rem 0;
 }
 
 .navbar-nav {

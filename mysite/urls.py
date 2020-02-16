@@ -17,10 +17,8 @@ urlpatterns = [
     path('Admin/', admin.site.urls),
 
     # Boroughs urls
-    path('Boroughs/', include('Boroughs.urls'))
+    path('Boroughs/', include('Boroughs.urls')),
 
+    # Creators Page
+    path('Creatord/', Creator, name='creators'),
 ]
-# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# if settings.DEBUG is True:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,3 +5,6 @@ def Index(request):
 
 def About(request):
     return render(request, 'about.html')
+
+def Creator(request):
+    return render(request, 'creators.html')

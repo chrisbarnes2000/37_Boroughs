@@ -11,7 +11,7 @@ def logout_view(request):
 
 class Create_Borough_View(CreateView):
     model = Borough
-    fields = ['title', 'content', 'Main_Img']
+    fields = ['title', 'content', 'main_img']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -20,7 +20,7 @@ class Create_Borough_View(CreateView):
 
 class Create_Photo_View(CreateView):
     model = Photo
-    fields = ['first_name', 'last_name', 'email', 'content', 'image']
+    fields = ['first_name', 'last_name', 'email', 'content', 'image', 'borough']
 
     def form_valid(self, form):
         # form.instance.author = self.request.user
@@ -42,7 +42,7 @@ class Detail_Borough_View(DetailView):
 
 class Edit_Borough_View(UpdateView):
     model = Borough
-    fields = ['title', 'content', 'Main_Img']
+    fields = ['title', 'content', 'main_img']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
