@@ -19,7 +19,11 @@
                 <p>{{ borough.content|linebreaksbr }}</p>
             </div>
             <div class="col text-center">
-                <img class="img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+                {% if borough.main_img %}
+                    <img class="img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-responsive" src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image"/></a>
+                {% endif %}
             </div>
         </div>
         

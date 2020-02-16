@@ -3,8 +3,12 @@
     <h5 class="card-header ">{{ borough.title }}</h5>
 
     <div class="card-body border-dark">
-        {{ borough.Main_Img.url }}
-        <img class="card-img img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image"/>
+        {% if borough.main_img %}
+            <img class="img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+        {% else %}
+            <a href="https://placeholder.com"><img class=img-responsive"
+                src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
+        {% endif %}
         <img class="card-img img-responsive mt-2" src="{% static 'images/reddivider.png' %}" alt="Red Divider">
         <p class="card-text">
             {{ borough.content|truncatewords_html:30 }}

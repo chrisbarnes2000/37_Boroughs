@@ -22,7 +22,7 @@ class Borough(models.Model):
                              unique=True, default="Title of your page.")
     author = models.ForeignKey(User, on_delete=models.PROTECT, help_text="The user that posted this article.")
     content = models.TextField(default="Write the content of your page here.")
-    main_img = models.ImageField(upload_to='main_images/')
+    main_img = models.ImageField(upload_to='main_images/', null=True)
 
     def __str__(self):
         return self.title
@@ -54,7 +54,8 @@ class Photo(models.Model):
     last_name = models.CharField(max_length=35)
     email = models.CharField(max_length=200)
     content = models.TextField(default="Write the content of your page here.")
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', null=True)
+    borough = models.ForeignKey(Borough, default=None, on_delete=models.PROTECT)
 
     # def __str__(self):
     #     return self.title
