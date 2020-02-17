@@ -7,7 +7,7 @@ from django.utils.text import slugify
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-from mysite.storage_backends import PrivateMediaStorage
+from mysite.storage_backends import PublicMediaStorage, PrivateMediaStorage
 
 class Borough(models.Model):
     """ Represents a single Borough. """
@@ -74,11 +74,11 @@ class Photo(models.Model):
         return super(Photo, self).save(*args, **kwargs)
 
 
-class Document(models.Model):
+class Upload(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    upload = models.FileField()
+    file = models.FileField(storage=PublicMediaStorage())
 
-class PrivateDocument(models.Model):
+
+class UploadPrivate(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    upload = models.FileField(storage=PrivateMediaStorage())
-    user = models.ForeignKey(User, related_name='documents', on_delete=models.PROTECT)
+    file = models.FileField(storage=PrivateMediaStorage())

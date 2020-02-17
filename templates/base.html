@@ -19,6 +19,55 @@
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/3520161f19.js" crossorigin="anonymous"></script>
 
+    {% block javascript %}
+    <script>
+        /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <!-- <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location;
+            $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+            $('ul.nav a').filter(function () {
+                return this.href == url;
+            }).parent().addClass('active');
+        });
+    </script> -->
+    
+    <!-- <script>
+        // Add active class to the current nav-item (highlight it)
+        var nav = document.getElementById("myNav");
+        var items = nav.getElementsByClassName("nav-item");
+        for (var i = 0; i < items.length; i++) {
+            items[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script> -->
+    {% endblock %}
+
     <title>37 Boroughs</title>
 </head>
 
