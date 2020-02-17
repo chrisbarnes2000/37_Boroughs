@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col m-4">
+        <div class="row">
+            <h1>
+                {{ borough.title }}
+                <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
+                    {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
+            </h1>
+            <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a>
+        </div>
+        <!-- {% if user.is_authenticated and user.is_staff %} -->
+        <!-- {% endif %} -->
+        <hr>
+        <div class="row mt-3">
+            <div class="col" style="margin-top: 3em; margin-bottom: 5em;">
+                <p>{{ borough.content|linebreaksbr }}</p>
+            </div>
+            <div class="col text-center">
+                {% if borough.main_img %}
+                    <img class="img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-responsive" src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image"/></a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <hr>
+        <a href="{% url 'boroughs' %}" class="btn btn-success">Back to List</a>
+    </div>
+</div>
+{% endblock %}

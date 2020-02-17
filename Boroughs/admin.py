@@ -1,3 +1,14 @@
+from imagekit.admin import AdminThumbnail
 from django.contrib import admin
+from Boroughs.models import Borough
 
-# Register your models here.
+class BoroughsAdmin(admin.ModelAdmin):
+    """ Show helpful fields on the changelist page. """
+    list_display = ('title', 'slug', 'author',
+                    'created', 'modified', 'admin_thumbnail')
+    admin_thumbnail = AdminThumbnail(image_field='Main_Img')
+    list_filter = ['title', 'created', 'author']
+    search_fields = ['title', 'author']
+
+
+admin.site.register(Borough, BoroughsAdmin)

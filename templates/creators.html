@@ -1,0 +1,79 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <img id="sf" src="{% static 'images/SF_bridge.png' %}" alt="Golden Gate">
+            </div>
+            <div class="col-7">
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'images/creators/Chris.png' %}" class="card-image img-fluid" alt="Creator Chris">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'images/creators/Ariane.png' %}" class="card-image img-fluid" alt="Creator Ariane">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'images/creators/Alanna.png' %}" class="card-image img-fluid" alt="Creator Alanna">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'images/creators/Ian.png' %}" class="card-image img-fluid" alt="Creator Ian">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="{% static 'images/creators/Constantino.png' %}" class="card-image img-fluid" alt="Creator Constantino">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
