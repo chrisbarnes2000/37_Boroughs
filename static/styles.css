@@ -118,6 +118,8 @@ img {
 
 .columns img {
     margin: 8px 8px;
+}
+
 .card-img {
     width: 100%;
     float: right;
@@ -138,23 +140,6 @@ img {
 
 label {
     color: red;
-}
-
-
-/* ------- */
-
- /* .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #3e8e41;
 }
 
 #pacific {
@@ -210,11 +195,33 @@ label {
     margin-bottom: 13px;
 }
 
+/* ------- */
+
+ .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+
+.errspan {
+    float: left;
+    margin-left: 15px;
+    margin-top: -35px; 
+    position: relative;
+    z-index: 2;
+}
+
 #myInput {
     box-sizing: border-box;
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
     font-size: 16px;
     padding: 14px 20px 12px 45px;
     border: none;
@@ -223,7 +230,7 @@ label {
 
 #myInput:focus {
     outline: 3px solid #ddd;
-} */
+}
 
 .dropdown {
     position: relative;

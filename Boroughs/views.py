@@ -13,6 +13,9 @@ def logout_view(request):
     logout(request)
 
 
+def Boroughs_Landing(request):
+    return render(request, 'boroughs_landing.html')
+
 class Create_Borough_View(CreateView):
     model = Borough
     fields = ['title', 'content', 'main_img']

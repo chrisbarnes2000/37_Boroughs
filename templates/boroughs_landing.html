@@ -1,0 +1,43 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <a href="{% url 'borough-details' 'chinatown' %}">
+            <img src="{% static 'images/chinatown-main-image.png' %}" alt="Chinatown" height="255"
+                class="gallery-pic">
+        </a>
+        <h3 id="chinatown">Chinatown</h3>
+    </div>
+    <div class="col">
+        <img src="{% static 'images/Landing/1.png' %}" height="255" alt="Pacific Heights" class="gallery-pic">
+        <h3 id="pacific">Pacific Heights</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img src="{% static 'images/Landing/3551_06.png' %}" height="200" alt="Desert" class="gallery-pic">
+        <h3 id="marina">Marina</h3>
+    </div>
+    <div class="col">
+        <img src="{% static 'images/Landing/3551_10.png' %}" alt="Desert Tall" class="gallery-pic">
+        <h3 id="norbeach">North Beach</h3>
+    </div>
+    <div class="col">
+        <img src="{% static 'images/Landing/3557_07.png' %}" height="200" alt="Empty House" class="gallery-pic">
+        <h3 id="soma">SoMa</h3>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'images/Landing/3551_02.png' %}" height="450" alt="Desk">
+        </div>
+        <div class="col">
+            <img src="{% static 'images/Landing/3557_17.png' %}" height="200" alt="Barn">
+        </div>
+        <div class="col">
+            <img src="{% static 'images/Landing/3557_25.png' %}" height="450" alt="Sun">
+        </div>
+    </div>
+</div>
+{% endblock %}

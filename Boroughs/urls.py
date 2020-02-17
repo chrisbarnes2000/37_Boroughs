@@ -7,7 +7,8 @@ from Boroughs.views import *
 
 urlpatterns = [
     # Boroughs Pages list of all pages
-    path('', Display_Boroughs_View.as_view(), name='boroughs'),
+    path('', Boroughs_Landing, name='boroughs_landing'),
+    path('model/', Display_Boroughs_View.as_view(), name='boroughs'),
 
     # Contribution Pages to Upload images
     path('contribute/borough', Create_Borough_View.as_view(), name='create-borough'),
