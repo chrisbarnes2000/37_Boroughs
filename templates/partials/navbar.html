@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-xl navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#"><b>37</b>BOROUGHS</a>
+        <a class="navbar-brand" href="{% url 'index' %}"><b>37</b>BOROUGHS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,57 +9,41 @@
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav" id="myNav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'creators' %}">Creators</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <div class="row">
-                        <a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a>
-                        <a class="nav-link dropdown-toggle" type="button" onclick="myFunction()"></a>
-                    </div>
-                    <div id="myDropdown" class="dropdown-content">
-                        <div class="px-3 py-2">
-                            <input type="text" placeholder="Search.." id="myInput" autofocus="autofocus" onkeyup="filterFunction()">
-                            <span class="fas fa-search-location errspan"></span>
-                        </div>
-                        <a class="dropdown-item" href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
-                        <!-- <div class="menuItems"> -->
-                        <a href="#base">Base</a>
-                        <a href="#blog">Blog</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#custom">Custom</a>
-                        <a href="#support">Support</a>
-                        <a href="#tools">Tools</a>
-                        <!-- </div> -->
-                        <!-- <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div> -->
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <button type="button" class="btn dropdown-toggle nav-link" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Contributions
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="nav-link" href="{% url 'create-borough' %}">Borough</a>
-                        <a class="nav-link" href="{% url 'image-upload' %}">Photo</a>
-                    </div>
+                    <a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a>
                 </li>
             </ul>
-
-
-            <ul class="socials">
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-instagram"></i>
-            </ul>
-
         </div>
-
     </div>
+    
+    <li class="nav-item dropdown">
+        <div class="row">
+            <!-- <a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a> -->
+            <a class="nav-link dropdown-toggle" type="button" onclick="myFunction()"></a>
+        </div>
+        <div id="myDropdown" class="dropdown-content">
+            <div class="px-3 py-2">
+                <input type="text" placeholder="Search.." id="myInput" autofocus="autofocus" onkeyup="filterFunction()">
+                <span class="fas fa-search-location errspan"></span>
+            </div>
+            <a class="dropdown-item" href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
+            <!-- <div class="menuItems"> -->
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+            <!-- </div> -->
+            <!-- <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div> -->
+        </div>
+    </li>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search for a Borough">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
 </nav>

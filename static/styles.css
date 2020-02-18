@@ -1,9 +1,77 @@
+/* Main Layout */
 body {
     font-family: 'Crimson Text', serif;
     font-size: 16px;
     letter-spacing: 1px;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 8rem;    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8rem;            /* Footer height */
+    /* text-align: center; */
+    /* margin-top: 3em; */
+}
+
+.footer-copyright{
+    font-size: large;
+    font-weight: 600;
+    padding-top: 4em;
+    color: black;
+}
+
+.submit {
+    background-color: #141414;
+    color: #fff;
+}
+
+.ul {
+    padding-left: none;
+}
+
+/* Nav Bar */
+.navbar {
+    border-bottom: 1px solid;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+    background-color: #141414;
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 0.3rem 1.5rem 0;
+}
+
+.navbar-nav {
+    margin: 0 auto 0 auto;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+/* Fonts */
 p {
     font-size: 16px;
     font-weight: 400;
@@ -28,6 +96,7 @@ h2 {
     font-weight: 400;
     margin: 0 0 1rem 0;
 }
+
 h3 {
     position: absolute;
     border: 1px solid white;
@@ -38,13 +107,52 @@ h3 {
     color: white;
 }
 
-footer {
-    margin-top: 3em;
-    text-align: center;
+label {
+    color: red;
 }
 
+/* FA EDIT */
+.socials {
+    align-content: end;
+    margin: auto 0 auto 0;
+    padding-inline-start: 0;
+}
+
+.fa-edit {
+    margin-top: 0.2em;
+    margin-left: 0.3em;
+    font-size: xx-large;
+    color: red;
+}
+
+.fa-trash {
+    font-size: xx-large;
+    color: red;
+}
+
+.fa-facebook {
+    padding: 0 1rem 0 1rem;
+    color: blue;
+}
+
+.fa-youtube {
+    color: red;
+}
+
+/* Images */
 img {
     width: 100%;
+}
+
+.card-image {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+}
+
+.columns img {
+    margin: 8px 8px;
 }
 
 .thumbnail {
@@ -56,92 +164,6 @@ img {
     border-radius: 3px;
 }
 
-.navbar {
-    border-bottom: 1px solid;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-}
-
-.nav-link {
-    font-size: 1rem;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.navbar-light .navbar-nav .active > .nav-link {
-    background-color: #141414;
-    color: #fff;
-}
-
-.submit {
-    background-color: #141414;
-    color: #fff;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    padding: 0.3rem 1.5rem 0;
-}
-
-.navbar-nav {
-    margin: 0 auto 0 auto;
-}
-
-.navbar-light .navbar-toggler {
-    border: none;
-}
-
-.ul {
-    padding-left: none;
-}
-
-.socials {
-    align-content: end;
-    margin: auto 0 auto 0;
-    padding-inline-start: 0;
-}
-
-.fa-facebook {
-    padding: 0 1rem 0 1rem;
-}
-
-.form-control {
-    border-radius: 0;
-    border: 1px solid #707070;
-    box-shadow: 0px 3px 7px -1px rgba(203,203,203,1);
-}
-
-.form-group > .col-sm {
-    padding: none;
-}
-
-.columns img {
-    margin: 8px 8px;
-}
-
-.card-img {
-    width: 100%;
-    float: right;
-    /* margin-right: 10px; */
-}
-
-.card-image {
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin-right: 10px;
-}
-
-#sf {
-    width: 400px;
-    /* margin: 150px 35px 0 0; */
-}
-
-label {
-    color: red;
-}
-
 #pacific {
     right: 109px;
     top: 102px;
@@ -149,6 +171,7 @@ label {
     align-items: center;
     justify-content: center;
 }
+
 #chinatown {
     left: 110px;
     top: 100px;
@@ -156,6 +179,7 @@ label {
     align-items: center;
     justify-content: center;
 }
+
 #marina {
     left: 35px;
     top: 70px;
@@ -163,6 +187,7 @@ label {
     align-items: center;
     justify-content: center;
 }
+
 #norbeach {
     left: 35px;
     top: 140px;
@@ -170,6 +195,7 @@ label {
     align-items: center;
     justify-content: center;
 }
+
 #soma {
     right: 35px;
     top: 70px;
@@ -195,8 +221,18 @@ label {
     margin-bottom: 13px;
 }
 
-/* ------- */
+/* Forms */
+.form-control {
+    border-radius: 0;
+    border: 1px solid #707070;
+    box-shadow: 0px 3px 7px -1px rgba(203,203,203,1);
+}
 
+.form-group > .col-sm {
+    padding: none;
+}
+
+/* ---Drop Down---- */
  .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -206,11 +242,9 @@ label {
     cursor: pointer;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
+.dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
 }
-
 
 .errspan {
     float: left;

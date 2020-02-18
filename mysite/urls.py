@@ -20,5 +20,5 @@ urlpatterns = [
     path('Boroughs/', include('Boroughs.urls')),
 
     # Creators Page
-    path('Creatord/', Creator, name='creators'),
+    path('Creators/', Creator, name='creators'),
 ]

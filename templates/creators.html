@@ -3,8 +3,8 @@
 {% load static %}
 {% block content %}
 <div class="row">
-    <div class="col-5">
-        <img id="sf" src="{% static 'images/SF_bridge.png' %}" alt="Golden Gate">
+    <div class="col-5 pt-5">
+        <img class="img-fluid img-fluid" src="{% static 'images/SF_bridge.png' %}" alt="Golden Gate">
     </div>
     <div class="col-7">
         <div class="card">
@@ -15,7 +15,7 @@
                 <div class="col">
                     <div class="card-block px-2">
                         <h4 class="card-title">Title</h4>
-                        <p class="card-text">Description</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aliquam non minima eum perspiciatis. Pariatur, natus cumque, ea nisi omnis sunt corporis officia eligendi optio eaque, incidunt tenetur ut error.</p>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,9 @@
                 <div class="col">
                     <div class="card-block px-2">
                         <h4 class="card-title">Title</h4>
-                        <p class="card-text">Description</p>
+                        <p class="card-text">Ariane is a computer science student at Make School with a concentration in front end web development. Although she
+                        loves working on the designs and configuration, she has a passion for management. She was in charge of managing this
+                        project.</p>
                     </div>
                 </div>
             </div>
@@ -41,7 +43,7 @@
                 <div class="col">
                     <div class="card-block px-2">
                         <h4 class="card-title">Title</h4>
-                        <p class="card-text">Description</p>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta inventore est itaque recusandae. Explicabo blanditiis alias voluptatum atque a soluta officia, aspernatur ullam quis illo magni ipsum expedita provident numquam.</p>
                     </div>
                 </div>
             </div>
@@ -54,7 +56,7 @@
                 <div class="col">
                     <div class="card-block px-2">
                         <h4 class="card-title">Title</h4>
-                        <p class="card-text">Description</p>
+                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, optio nisi itaque in beatae voluptas esse consectetur, ipsa obcaecati dicta similique veritatis, quos perferendis harum odio adipisci illo soluta temporibus.</p>
                     </div>
                 </div>
             </div>
@@ -67,11 +69,16 @@
                 <div class="col">
                     <div class="card-block px-2">
                         <h4 class="card-title">Title</h4>
-                        <p class="card-text">Description</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi maiores ad a inventore odit mollitia corporis omnis quis suscipit in quaerat ipsum enim dolorum animi, incidunt ratione, quo, fugit tempora!</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="row justify-content-center mt-3">
+    <p>
+        If you have any comments, concerns, or ideas for improvements on this site <a href="{% url 'index' %}">Contact us</a>
+    </p>
 </div>
 {% endblock %}

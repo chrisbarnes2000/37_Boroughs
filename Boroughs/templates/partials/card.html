@@ -4,12 +4,12 @@
 
     <div class="card-body border-dark">
         {% if borough.main_img %}
-            <img class="img-responsive" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+            <img class="img-fluid" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
         {% else %}
-            <a href="https://placeholder.com"><img class=img-responsive"
+            <a href="https://placeholder.com"><img class=img-fluid"
                 src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
         {% endif %}
-        <img class="card-img img-responsive mt-2" src="{% static 'images/reddivider.png' %}" alt="Red Divider">
+        <img class="img-fluid mt-2" src="{% static 'images/reddivider.png' %}" style="width: 100%; float: right" alt="Red Divider">
         <p class="card-text">
             {{ borough.content|truncatewords_html:30 }}
             <hr>

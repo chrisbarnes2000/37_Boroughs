@@ -2,77 +2,85 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>We Need Your Pictures!</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                sed diam nonumy eirmod tempor invidunt ut labore et
-                dolore magna aliquyam erat, sed diam voluptua. At vero
-                eos et accusam et justo duo dolores et ea rebum. Stet
-                clita kasd gubergren, no sea takimata sanctus est Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                invidunt ut labore et dolore magna aliquyam erat, sed diam
-                voluptua. At vero eos et accusam et justo duo dolores et ea
-                rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet</p>
+<div class="row">
+    <div class="col">
+        <h1 class="text-center">We Need Your Pictures!</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero
+            eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus
+            est Lorem ipsum dolor sit amet</p>
 
-            <form class="form-horizontal mt-3" action="" method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-group form-row">
-                    <div class="col">
-                        <span class="text-danger small">{{ field.errors }}</span>
-                        <label class="control-label">{{ form.first_name.label_tag }}</label>
-                        <!-- <input type="text" class="form-control" placeholder="First name"> -->
+        <form class="form-horizontal mt-3" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ form.first_name.errors }}</span>
                     </div>
-                    <div class="col">
-                        <!-- <label class="control-label">{{ form.last_name.label_tag }}</label> -->
-                        <!-- {{ form.l_name }} -->
-                        <input type="text" class="form-control" placeholder="Last name">
-                    </div>
+                    <input type="text" class="form-control" placeholder="First name" name="{{ form.first_name.name }}" id="id_{{ form.first_name.name }}">
                 </div>
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ form.last_name.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Last name" name="{{ form.last_name.name }}" id="id_{{ form.last_name.name }}">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ form.email.errors }}</span>
+                    </div>
+                    <input type="text-form" class="form-control" placeholder="Email Address" name="{{ form.email.name }}" id="id_{{ form.email.name }}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ form.content.errors }}</span>
+                    </div>
+                    <textarea class="form-control" placeholder="Tell us about your photo..." rows="7" name="{{ form.content.name }}" id="id_{{ form.content.name }}"></textarea>
+                </div>
+            </div>
 
-                <div class="form-row">
-                    <div class="col">
-                        <!-- <label class="control-label">{{ form.email.label_tag }}</label> -->
-                        <!-- {{ form.email }} -->
-                        <input type="text-form" class="form-control" placeholder="Email Address">
+            <div class="form-row mt-3 mb-3">
+                <div class="col">
+                    <input type="file" name="{{ form.image.name }}" id="id_{{ form.image.name }}">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ form.image.errors }}</span>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="col">
-                        <!-- <label class="control-label">{{ form.content.label_tag }}</label> -->
-                        <!-- {{ form.content }} -->
-                        <textarea class="form-control" placeholder="Tell us about your photo..." rows="7"></textarea>
+                <div class="col">
+                    <select name="{{ form.borough.name }}" id="id_{{ form.borough.name }}">
+                        <option value="">What Burrough?</option>
+                        <option value="chinatown">Chinatown</option>
+                        <option value="castro">Castro</option>
+                        <option value="market-south">South of Market</option>
+                        <option value="pacific-heights">Pacific Heights</option>
+                        <option value="north-beach">North Beach</option>
+                        <option value="dogwood">Dogwood</option>
+                        <option value="richmond">Richmond</option>
+                    </select>
+                    <div>
+                        <span class="text-danger small">{{ form.borough.errors }}</span>
                     </div>
                 </div>
-                <div class="form-row mt-3 mb-3">
-                    <div class="col">
-                        <input type="file">
-                    </div>
-                    <div class="col">
-                        <select name="buroughs" id="burroughs-select">
-                            <option value="">What Burrough?</option>
-                            <option value="chinatown">Chinatown</option>
-                            <option value="castro">Castro</option>
-                            <option value="market-south">South of Market</option>
-                            <option value="pacific-heights">Pacific Heights</option>
-                            <option value="north-beach">North Beach</option>
-                            <option value="dogwood">Dogwood</option>
-                            <option value="richmond">Richmond</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <input type="submit" value="Submit" class="active form-control">
-                    </div>
+                <div class="col">
+                    <input type="submit" value="Submit" class="form-control">
                 </div>
-            </form>
-        </div>
-        <div class="col">
-            <img src="{% static 'images/contribute.png' %}" class="img-fluid" alt="Contribute">
-        </div>
+            </div>
+        </form>
     </div>
-</div>
+    <div class="col">
+        <img src="{% static 'images/contribute.png' %}" class="img-fluid" alt="Contribute">
+    </div>
 </div>
 {% endblock %}

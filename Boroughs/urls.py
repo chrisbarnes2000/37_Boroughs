@@ -21,13 +21,9 @@ urlpatterns = [
     path('<str:slug>/', Detail_Borough_View.as_view(), name='borough-details'),
 
     # ex: /Boroughs/chinatown/edit/
-    path('<str:slug>/edit/', Edit_Borough_View.as_view(), name='edit-borough'),
+    # path('<str:slug>/edit/', Edit_Borough_View.as_view(), name='edit-borough'),
 
     # ex: /Boroughs/chinatown/delete/
     path('<str:slug>/delete/', Delete_Borough_View.as_view(), name='delete-borough'),
-
 ]
-# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
