@@ -11,7 +11,6 @@ urlpatterns = [
     path('model/', Display_Boroughs_View.as_view(), name='boroughs'),
 
     # Contribution Pages to Upload images
-    path('contribute/borough', Create_Borough_View.as_view(), name='create-borough'),
     path('contribute/photo', Create_Photo_View.as_view(), name='image-upload'),
 
     # Success Page for redirects
@@ -21,7 +20,7 @@ urlpatterns = [
     path('<str:slug>/', Detail_Borough_View.as_view(), name='borough-details'),
 
     # ex: /Boroughs/chinatown/edit/
-    # path('<str:slug>/edit/', Edit_Borough_View.as_view(), name='edit-borough'),
+    path('<str:slug>/edit/', Edit_Borough_View.as_view(), name='edit-borough'),
 
     # ex: /Boroughs/chinatown/delete/
     path('<str:slug>/delete/', Delete_Borough_View.as_view(), name='delete-borough'),
