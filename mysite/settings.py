@@ -137,12 +137,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-USE_S3 = os.getenv('USE_S3', False)
-
-print(USE_S3)
+USE_S3 = os.getenv('USE_S3', False) == True
 
 if USE_S3:
-    print("THIS SHOULD NOT BE RUNNING")
     # aws settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
