@@ -8,6 +8,7 @@ class StaticStorage(S3Boto3Storage):
         default_acl = 'public-read'
     else:
         location = 'static'
+        default_acl = None
 
 class PublicMediaStorage(S3Boto3Storage):
     if settings.USE_S3:
@@ -16,6 +17,7 @@ class PublicMediaStorage(S3Boto3Storage):
         file_overwrite = False
     else:
         location = 'media'
+        default_acl = None
 
 class PrivateMediaStorage(S3Boto3Storage):
     if settings.USE_S3:
@@ -25,3 +27,4 @@ class PrivateMediaStorage(S3Boto3Storage):
         custom_domain = False
     else:
         location = 'private'
+        default_acl = None

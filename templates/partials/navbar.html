@@ -17,49 +17,59 @@
     </div>
 
     <li class="dropdown">
-        <div class="px-3 py-2">
+        <div class="input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-search-location"></i></span>
+                <label for="myInput" class="input-group-text" id="basic-addon1">
+                    <i class="fas fa-search-location"></i>
+                </label>
+                <!-- <span class="input-group-text" id="basic-addon1">
+                    <i class="fas fa-search-location"></i>
+                </span> -->
             </div>
-            <input class="form-control" type="text" placeholder="Search for a Borough" aria-describedby="basic-addon1" id="myInput" autofocus="autofocus" onclick="sort_search()" onkeyup="filterFunction()">
+            <input type="text" class="form-control" placeholder="Search for a Borough" aria-label="Search" aria-describedby="basic-addon1" onkeyup="filter()" onfocus="show_items()" id="myInput"> <!-- onblur="show_items()" -->
         </div>
         <div id="myDropdown" class="dropdown-content">
-            <a class="dropdown-item" href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
             <div class="menuItems">
-                <a href="#base">Base</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-                <a href="#custom">Custom</a>
-                <a href="#support">Support</a>
-                <a href="#tools">Tools</a>
+                <a href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
+                <a href="{% url 'borough-details' 'test' %}">Downtown / Civic Center</a>
+                <a href="{% url 'borough-details' 'test' %}">Financial District</a>
+                <a href="{% url 'borough-details' 'test' %}">Marina</a>
+                <a href="{% url 'borough-details' 'test' %}">Pacific Heights</a>
+                <a href="{% url 'borough-details' 'test' %}">Mission</a>
+                <a href="{% url 'borough-details' 'test' %}">Castro / Upper Market</a>
+                <a href="{% url 'borough-details' 'test' %}">Presidio</a>
+                <a href="{% url 'borough-details' 'test' %}">Inner Sunset</a>
+                <a href="{% url 'borough-details' 'test' %}">Twin Peaks</a>
+                <a href="{% url 'borough-details' 'test' %}">Treasure Island / Yerba Buena Island</a>
+                <a href="{% url 'borough-details' 'test' %}">Golden Gate Park</a>
+                <a href="{% url 'borough-details' 'test' %}">Noe Valley</a>
+                <a href="{% url 'borough-details' 'test' %}">Nob Hill</a>
+                <a href="{% url 'borough-details' 'test' %}">North Beach</a>
+                <a href="{% url 'borough-details' 'test' %}">Russian Hill</a>
+                <a href="{% url 'borough-details' 'test' %}">Western Addition</a>
+                <a href="{% url 'borough-details' 'test' %}">South of Market</a>
+                <a href="{% url 'borough-details' 'test' %}">Portrero Hill</a>
+                <a href="{% url 'borough-details' 'test' %}">Haight-Ashbury</a>
+                <a href="{% url 'borough-details' 'test' %}">Presidio Heights</a>
+                <a href="{% url 'borough-details' 'test' %}">Seacliff</a>
+                <a href="{% url 'borough-details' 'test' %}">Outer Richmond</a>
+                <a href="{% url 'borough-details' 'test' %}">Inner Richmond</a>
+                <a href="{% url 'borough-details' 'test' %}">Outer Sunset</a>
+                <a href="{% url 'borough-details' 'test' %}">West of Twin Peaks</a>
+                <a href="{% url 'borough-details' 'test' %}">Glen Park</a>
+                <a href="{% url 'borough-details' 'test' %}">Bernal Heights</a>
+                <a href="{% url 'borough-details' 'test' %}">Bayview</a>
+                <a href="{% url 'borough-details' 'test' %}">Excelsior</a>
+                <a href="{% url 'borough-details' 'test' %}">Visitacion Valley</a>
+                <a href="{% url 'borough-details' 'test' %}">Crocker-Amazon</a>
+                <a href="{% url 'borough-details' 'test' %}">Outer Mission</a>
+                <a href="{% url 'borough-details' 'test' %}">Oceanview</a>
+                <a href="{% url 'borough-details' 'test' %}">Diamond Heights</a>
+                <a href="{% url 'borough-details' 'test' %}">Parkside</a>
+                <a href="{% url 'borough-details' 'test' %}">Lakeshore</a>
             </div>
             <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div>
         </div>
     </li>
 
 </nav>
-
-
-
-<!-- <li class="nav-item dropdown">
-    <div class="row">
-        <!-- <a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a> ->
-        <a class="nav-link dropdown-toggle" type="button" onclick="myFunction()"></a>
-    </div>
-    <div id="myDropdown" class="dropdown-content">
-        <div class="px-3 py-2">
-            <input type="text" placeholder="Search.." id="myInput" autofocus="autofocus" onkeyup="filterFunction()">
-            <span class="fas fa-search-location errspan"></span>
-        </div>
-        <a class="dropdown-item" href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
-        <!-- <div class="menuItems"> ->
-        <a href="#base">Base</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <a href="#custom">Custom</a>
-        <a href="#support">Support</a>
-        <a href="#tools">Tools</a>
-        <!-- </div> ->
-        <!-- <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div> ->
-    </div>
-</li> -->
