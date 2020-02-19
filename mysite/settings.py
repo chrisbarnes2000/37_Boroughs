@@ -25,7 +25,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = False  'Value Not Found'
 
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -167,3 +166,12 @@ else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+
+# PROTIP:
+# Need to override settings? Create a local_settings.py file
+# in this directory, and add settings there.
+try:
+    from mysite.local_settings import *
+except ImportError:
+    pass
