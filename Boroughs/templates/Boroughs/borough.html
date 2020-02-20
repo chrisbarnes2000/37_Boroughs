@@ -4,11 +4,11 @@
 <div class="row">
     <div class="col m-4">
         <div class="row">
-            <h1>
+            <h2>
                 {{ borough.title }}
                 <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
                     {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
-            </h1>
+            </h2>
             {% if user.is_authenticated and user.is_staff %}
                 <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a>
             {% endif %}
