@@ -14,6 +14,17 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a></li>
             </ul>
         </div>
+        {% comment %}
+        <!-- {% if user.is_authenticated %}
+            <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
+            <a href="{% url 'account_logout' %}" class="btn btn-danger ml-4 mr-2">Log Out</a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-secondary ml-2">Log In</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary mr-2">Sign Up</a>
+        {% endif %} -->
+        {% endcomment %}
+
+        
     </div>
 
     <li class="dropdown">
@@ -28,16 +39,16 @@
         <div id="myDropdown" class="dropdown-content">
             <div class="menuItems">
                 <a href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
-                <a href="{% url 'borough-details' 'test' %}">Downtown / Civic Center</a>
+                <a href="{% url 'borough-details' 'downtowncivic-center' %}">Downtown/Civic Center</a>
                 <a href="{% url 'borough-details' 'financial-district' %}">Financial District</a>
                 <a href="{% url 'borough-details' 'marina' %}">Marina</a>
                 <a href="{% url 'borough-details' 'pacific-heights' %}">Pacific Heights</a>
                 <a href="{% url 'borough-details' 'mission' %}">Mission</a>
-                <a href="{% url 'borough-details' 'test' %}">Castro / Upper Market</a>
+                <a href="{% url 'borough-details' 'castroupper-market' %}">Castro/Upper Market</a>
                 <a href="{% url 'borough-details' 'presidio' %}">Presidio</a>
                 <a href="{% url 'borough-details' 'inner-sunset' %}">Inner Sunset</a>
                 <a href="{% url 'borough-details' 'twin-peaks' %}">Twin Peaks</a>
-                <a href="{% url 'borough-details' 'test' %}">Treasure Island / Yerba Buena Island</a>
+                <a href="{% url 'borough-details' 'treasure-islandyerba-buena-island' %}">Treasure Island/Yerba Buena Island</a>
                 <a href="{% url 'borough-details' 'golden-gate-park' %}">Golden Gate Park</a>
                 <a href="{% url 'borough-details' 'noe-valley' %}">Noe Valley</a>
                 <a href="{% url 'borough-details' 'nob-hill' %}">Nob Hill</a>
