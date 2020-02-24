@@ -8,6 +8,9 @@ from django.views.generic import *
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
+from django.contrib.sites import requests
+from django.core.serializers import json
+import os
 
 def logout_view(request):
     logout(request)
@@ -18,7 +21,7 @@ def Boroughs_Landing(request):
 
 class Create_Borough_View(CreateView):
     model = Borough
-    fields = ['title', 'content', 'main_img']
+    fields = ['title', 'zipcode', 'content', 'main_img', 'sources']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -63,11 +66,19 @@ class Display_Boroughs_View(ListView):
 class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
+    
+    def get_population(self):
+        CENSUS_API = settings.CENSUS_BASEAPI % (os.getenv('CENSUS_KEY'), self.zipcode)
 
+        #call the API and collect the response
+        response = requests.get(settings.CENSUS_API)
+
+        #load the response into a JSON, ignoring the first element which is just field labels
+        formattedResponse = json.loads(response.text)[1:]
 
 class Edit_Borough_View(UpdateView):
     model = Borough
-    fields = ['title', 'content', 'main_img']
+    fields = ['title', 'zipcode', 'content', 'main_img', 'sources']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
