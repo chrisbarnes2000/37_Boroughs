@@ -46,15 +46,17 @@ class Photo(models.Model):
     objects = models.Manager()
     created = models.DateTimeField(
         auto_now_add=True, help_text="The date and time this page was created. Automatically generated when the model saves.")
+    approved = models.BooleanField(default=False)
+    borough = models.ForeignKey(Borough, default=None, on_delete=models.PROTECT)
+
+    image = models.ImageField(storage=PublicMediaStorage(), null=False)
+    # private = models.ImageField(storage=PrivateMediaStorage(), null=False)
+    content = models.TextField(default="Write the content of your page here.")
+    votes = models.IntegerField(default=0)
+
     first_name = models.CharField(max_length=35)
     last_name = models.CharField(max_length=35)
     email = models.CharField(max_length=200)
-    content = models.TextField(default="Write the content of your page here.")
-    image = models.ImageField(storage=PublicMediaStorage(), null=False)
-    # private = models.ImageField(storage=PrivateMediaStorage(), null=False)
-    borough = models.ForeignKey(Borough, default=None, on_delete=models.PROTECT)
-    approved = models.BooleanField(default=False)
-    votes = models.IntegerField(default=0)
 
     def was_published_recently(self):
         now = timezone.now()

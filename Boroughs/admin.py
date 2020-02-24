@@ -2,14 +2,20 @@ from imagekit.admin import AdminThumbnail
 from django.contrib import admin
 from Boroughs.models import Borough, Photo
 
+class photoInline(admin.TabularInline):
+    model = Photo
+    extra = 0
+
 class BoroughsAdmin(admin.ModelAdmin):
     """ Show helpful fields on the changelist page. """
+    search_fields = ['title', 'author']
+    list_filter = ['title', 'created', 'author']
+
     list_display = ('title', 'slug', 'author',
                     'created', 'modified')
-    admin_thumbnail = AdminThumbnail(image_field='main_img')
-    list_filter = ['title', 'created', 'author']
-    search_fields = ['title', 'author']
 
+    admin_thumbnail = AdminThumbnail(image_field='main_img')
+    inlines = [photoInline]
 
 admin.site.register(Borough, BoroughsAdmin)
 
