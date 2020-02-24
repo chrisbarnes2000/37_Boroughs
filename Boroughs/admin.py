@@ -20,9 +20,9 @@ class PhotoAdmin(admin.ModelAdmin):
     #     # ('Date information', {'fields': ['created'], 'classes': ['collapse']}),
     # ]
 
-    list_display = ('content', 'image', 'borough', 'approved', 'was_published_recently', 
+    list_display = ('content', 'image', 'borough', 'approved', 'was_published_recently', 'votes',
                     'first_name', 'last_name', 'email', 'created')
-    list_filter = ['borough', 'created', 'email']
+    list_filter = ['borough', 'created', 'email', 'votes']
     search_fields = ['borough', 'content']
 
 admin.site.register(Photo, PhotoAdmin)

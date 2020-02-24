@@ -53,7 +53,8 @@ class Photo(models.Model):
     image = models.ImageField(storage=PublicMediaStorage(), null=False)
     # private = models.ImageField(storage=PrivateMediaStorage(), null=False)
     borough = models.ForeignKey(Borough, default=None, on_delete=models.PROTECT)
-    approved = models.BooleanField(default=False, )
+    approved = models.BooleanField(default=False)
+    votes = models.IntegerField(default=0)
 
     def was_published_recently(self):
         now = timezone.now()

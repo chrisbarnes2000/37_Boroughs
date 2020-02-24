@@ -24,4 +24,7 @@ urlpatterns = [
 
     # ex: /Boroughs/chinatown/delete/
     path('<str:slug>/delete/', Delete_Borough_View.as_view(), name='delete-borough'),
+
+    # Vote Page for a boroughs photo
+    path('<str:slug>/vote/', vote, name='vote'),
 ]
