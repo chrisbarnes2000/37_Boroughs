@@ -11,6 +11,9 @@ The goal of this project is to provide a platform for photographers, travelers, 
 * Help others find all the little nooks and crannies  📍
 * Upload your findings 📷
 
+### Deployed on Heroku: 
+<a href> https://boroughs37.herokuapp.com/ </a>
+
 ### Dependencies & USER INSTRUCTIONS :
 Dependencies are added to the `requirements.txt` file. 
 
