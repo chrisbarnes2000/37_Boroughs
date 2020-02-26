@@ -1,14 +1,8 @@
-# PROJECT TITLE: 37 Boroughs
+# 37 Boroughs
 
-## Created by: Alanna, Ariane, Chris, Constantino, Ian
+### Created by: Alanna, Ariane, Chris, Constantino, Ian
 
 ![image](/static/images/SF_README.jpeg)
-
-## !! IF UPDATING FRONT END
-    Change the files in either 'templates/' or 'static/'
-    I have converted the main pages to use templating so it is easier to update things
-    and Styles have been moved into the style.css rather than templates
-
 
 ### PURPOSE OF PROJECT: 
 
