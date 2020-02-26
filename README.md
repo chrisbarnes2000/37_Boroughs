@@ -1,16 +1,15 @@
-# PROJECT TITLE: 37 Boroughs
+# 37 Boroughs
 
-## Created by: Alanna, Ariane, Chris, Constantino, Ian
+### Created by: Alanna, Ariane, Chris, Constantino, Ian
 
-## !! IF UPDATING FRONT END
-    Change the files in either 'templates/' or 'static/'
-    I have converted the main pages to use templating so it is easier to update things
-    and Styles have been moved into the style.css rather than templates
-
+![image](/static/images/SF_README.jpeg)
 
 ### PURPOSE OF PROJECT: 
 
-The goal of this project is to provide a platform for photographers, travelers, and businesses alike to be able to share photos of their local or favorite community.
+The goal of this project is to provide a platform for photographers, travelers, and businesses alike to be able to share photos of their local or favorite community in San Francisco. You will be able to:
+* Discover all the hidden gems 💎
+* Help others find all the little nooks and crannies  📍
+* Upload your findings 📷
 
 ### Dependencies & USER INSTRUCTIONS :
 Dependencies are added to the `requirements.txt` file. 
