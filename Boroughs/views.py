@@ -3,6 +3,7 @@ from django.contrib.auth import logout
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse, HttpResponseRedirect
 from Boroughs.models import Borough, Photo
+<<<<<<< HEAD
 # Upload, UploadPrivate
 from django.views.generic import *
 from django.conf import settings
@@ -11,6 +12,11 @@ from django.utils import timezone
 from django.contrib.sites import requests
 from django.core.serializers import json
 import os
+=======
+from django.views.generic import *
+from django.core.files.storage import FileSystemStorage
+from django.utils import timezone
+>>>>>>> e79dfc2e73bbada27d9f00a2b0f4dbc103cd8575
 
 def logout_view(request):
     logout(request)
@@ -66,6 +72,7 @@ class Display_Boroughs_View(ListView):
 class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
+<<<<<<< HEAD
     
     def get_population(self):
         CENSUS_API = settings.CENSUS_BASEAPI % (os.getenv('CENSUS_KEY'), self.zipcode)
@@ -79,6 +86,12 @@ class Detail_Borough_View(DetailView):
 class Edit_Borough_View(UpdateView):
     model = Borough
     fields = ['title', 'zipcode', 'content', 'main_img', 'sources']
+=======
+
+class Edit_Borough_View(UpdateView):
+    model = Borough
+    fields = ['title', 'slug, ''zipcode', 'content', 'main_img', 'sources']
+>>>>>>> e79dfc2e73bbada27d9f00a2b0f4dbc103cd8575
 
     def form_valid(self, form):
         form.instance.author = self.request.user
