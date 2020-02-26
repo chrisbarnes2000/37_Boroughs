@@ -1,4 +1,4 @@
-# PROJECT TITLE: 37 Boroughs
+# 37 Boroughs
 
 ## Created by: Alanna, Ariane, Chris, Constantino, Ian
 
