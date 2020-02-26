@@ -226,7 +226,7 @@ img {
 }
 
 .container>div {
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     transition: 400ms;
 }
 
