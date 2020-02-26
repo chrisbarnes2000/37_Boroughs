@@ -1,11 +1,13 @@
 <!-- templates/index.html -->
 {% extends 'base.html' %}
 {% load static %}
-{% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'landing.css' %}">
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'landing.css' %}">
+    {% endblock %}
 
 {% block title %}All 37 Boroughs{% endblock %}
-{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="a">
