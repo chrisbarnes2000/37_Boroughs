@@ -13,9 +13,9 @@
 ### PURPOSE OF PROJECT: 
 
 The goal of this project is to provide a platform for photographers, travelers, and businesses alike to be able to share photos of their local or favorite community in San Francisco. You will be able to:
-..* Discover all the hidden gems 💎
-..* Help others find all the little nooks and crannies  📍
-..* Upload your findings 📷
+* Discover all the hidden gems 💎
+* Help others find all the little nooks and crannies  📍
+* Upload your findings 📷
 
 ### Dependencies & USER INSTRUCTIONS :
 Dependencies are added to the `requirements.txt` file. 
