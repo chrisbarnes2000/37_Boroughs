@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-# PROJECT TITLE: 37 Boroughs
-
-## Created by: Alanna, Ariane, Chris, Constantino, Ian
-
-## !! IF UPDATING FRONT END
-    Change the files in either 'templates/' or 'static/'
-    I have converted the main pages to use templating so it is easier to update things
-    and Styles have been moved into the style.css rather than templates
-
-
-### PURPOSE OF PROJECT: 
-
-The goal of this project is to provide a platform for photographers, travelers, and businesses alike to be able to share photos of their local or favorite community.
-=======
 # 37 Boroughs
 
 ### Created by: Alanna, Ariane, Chris, Constantino, Ian
@@ -28,7 +13,6 @@ The goal of this project is to provide a platform for photographers, travelers, 
 
 ### Deployed on Heroku: 
 <a href> https://boroughs37.herokuapp.com/ </a>
->>>>>>> e79dfc2e73bbada27d9f00a2b0f4dbc103cd8575
 
 ### Dependencies & USER INSTRUCTIONS :
 Dependencies are added to the `requirements.txt` file. 
