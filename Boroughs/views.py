@@ -68,10 +68,10 @@ class Detail_Borough_View(DetailView):
     template_name = 'Boroughs/borough.html'
     
     def get_population(self):
-        CENSUS_API = settings.CENSUS_BASEAPI % (os.getenv('CENSUS_KEY'), self.zipcode)
+        CENSUS_API = settings.CENSUS_BASEAPI % os.getenv('CENSUS_KEY')
 
         #call the API and collect the response
-        response = requests.get(settings.CENSUS_API)
+        response = requests.get(CENSUS_API)
 
         #load the response into a JSON, ignoring the first element which is just field labels
         formattedResponse = json.loads(response.text)[1:]
