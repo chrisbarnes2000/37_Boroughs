@@ -169,3 +169,45 @@ img {
     background-color: #fff;
     border-radius: 3px;
 }
+
+/* Forms */
+.form-control {
+  border-radius: 0;
+  border: 1px solid #707070;
+  box-shadow: 0px 3px 7px -1px rgba(203, 203, 203, 1);
+}
+
+.form-group>.col-sm {
+  padding: none;
+}
+
+/* ---Drop Down---- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
