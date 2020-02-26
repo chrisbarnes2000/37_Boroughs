@@ -1,0 +1,93 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Creators of 37 Boroughs{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-5 pt-5">
+        <img class="img-fluid img-fluid" src="{% static 'images/SF_bridge.png' %}" alt="Golden Gate">
+    </div>
+    <div class="col-7">
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto mt-3">
+                    <img src="{% static 'images/creators/Chris.png' %}" class="card-image img-fluid" alt="Creator Chris">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title">Back End Developer</h4>
+                        <p class="card-text">
+                            Chris is a computer science student at Make School following the concentrations Data Science & Back End Web Development.<br>
+                            He enjoys working in the STEM fields and had a blast as a <a href="https://www.firstinspires.org/robotics/frc">FRC</a> <br>
+                            programmer from 2015-2019 on team <a href="https://frc-events.firstinspires.org/team/2927">2927</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto mt-3">
+                    <img src="{% static 'images/creators/Ariane.png' %}" class="card-image img-fluid" alt="Creator Ariane">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title">Product/Team Manager</h4>
+                        <p class="card-text">
+                            Ariane is a computer science student at Make School following the concentration of Front End Web Development.
+                            Although she loves working on the designs and configuration, she has a passion for management.
+                            She was in charge of managing this project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto mt-3">
+                    <img src="{% static 'images/creators/Alanna.png' %}" class="card-image img-fluid" alt="Creator Alanna">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title">Git Master</h4>
+                        <p class="card-text">Alanna is a Computer Science student at Make School following the concentration of Data Science. She has a B.A. Degree in Child Development from California State University, Sacramento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto mt-3">
+                    <img src="{% static 'images/creators/Ian.png' %}" class="card-image img-fluid" alt="Creator Ian">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title">Front End Developer</h4>
+                        <p class="card-text">Ian is a USAF veteran turned Computer Science student with a Front-End Development concentration. While going through Make School to earn his degree, he also works part-time as a bartender in the SF area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-auto mt-3">
+                    <img src="{% static 'images/creators/Constantino.png' %}" class="card-image img-fluid" alt="Creator Constantino">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <h4 class="card-title">Desgin/Logistics Manager</h4>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row justify-content-center mt-3">
+    <p>
+        If you have any comments, concerns, or ideas for improvements on this site <a href="{% url 'index' %}">Contact us</a>
+    </p>
+</div> -->
+{% endblock %}

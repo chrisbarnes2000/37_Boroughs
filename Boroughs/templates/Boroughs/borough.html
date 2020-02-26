@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col m-4">
+        <a href="{% url 'boroughs_landing' %}" class="btn btn-success float-right">Back to List</a>
+        <div class="row">
+            <h2>
+                {{ borough.title }} {{ borough.zipcode }}
+                <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
+                    {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
+            </h2>
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a>
+            {% endif %}
+        </div>
+
+
+        <hr>
+
+
+        <div class="row mt-3">
+            <div class="col" style="margin-top: 3em; margin-bottom: 2em;">
+                <p>{{ borough.content|linebreaksbr }}</p>
+                {% if borough.sources %}
+                    <a href="{{ borough.sources }}">Source For Information</a>
+                {% endif %}
+                </div>
+            <div class="col text-center">
+                {% if borough.main_img %}
+                    <img class="img-fluid" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-fluid" src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image"/></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+{% for photo in borough.photo_set.all %}
+    {% if photo.approved %}
+        <div class="row justify-content-center">
+            <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%">
+        </div>
+    {% endif %}
+{% endfor%}
+
+
+<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'vote' borough.slug %}" method="POST">
+    {% csrf_token %}
+    {% for photo in borough.photo_set.all %}
+        {% if photo.approved %}
+        <div class="row justify-content-center">
+            <!-- <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%"> ->
+            <input type="image" class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%" name="photo" id="photo_{{ forloop.counter }}" value="{{ photo.id }}">
+        </div>
+        <div class="row justify-content-center">
+            <input type="submit" value="Like">
+            <label for="photo_{{ forloop.counter }}">{{ photo.votes }}</label>
+        </div>
+        {% endif %}
+    {% endfor%}
+</form> -->
+
+{% endblock %}

@@ -1,0 +1,83 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-xl navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}"><b>37</b>BOROUGHS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" id="myNav">
+                <li class="nav-item"><a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a></li>
+            </ul>
+        </div>
+        {% comment %}
+        <!-- {% if user.is_authenticated %}
+            <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
+            <a href="{% url 'account_logout' %}" class="btn btn-danger ml-4 mr-2">Log Out</a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="btn btn-secondary ml-2">Log In</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary mr-2">Sign Up</a>
+        {% endif %} -->
+        {% endcomment %}
+
+        
+    </div>
+
+    <li class="dropdown">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label for="myInput" class="input-group-text" id="basic-addon1">
+                    <i class="fas fa-search-location"></i>
+                </label>
+            </div>
+            <input type="text" class="form-control" placeholder="Search for a Borough" aria-label="Search" aria-describedby="basic-addon1" onkeyup="filter()" onfocus="show_items()" id="myInput"> <!-- onblur="show_items()" -->
+        </div>
+        <div id="myDropdown" class="dropdown-content">
+            <div class="menuItems">
+                <a href="{% url 'borough-details' 'chinatown' %}">Chinatown</a>
+                <a href="{% url 'borough-details' 'downtowncivic-center' %}">Downtown/Civic Center</a>
+                <a href="{% url 'borough-details' 'financial-district' %}">Financial District</a>
+                <a href="{% url 'borough-details' 'marina' %}">Marina</a>
+                <a href="{% url 'borough-details' 'pacific-heights' %}">Pacific Heights</a>
+                <a href="{% url 'borough-details' 'mission' %}">Mission</a>
+                <a href="{% url 'borough-details' 'castroupper-market' %}">Castro/Upper Market</a>
+                <a href="{% url 'borough-details' 'presidio' %}">Presidio</a>
+                <a href="{% url 'borough-details' 'inner-sunset' %}">Inner Sunset</a>
+                <a href="{% url 'borough-details' 'twin-peaks' %}">Twin Peaks</a>
+                <a href="{% url 'borough-details' 'treasure-islandyerba-buena-island' %}">Treasure Island/Yerba Buena Island</a>
+                <a href="{% url 'borough-details' 'golden-gate-park' %}">Golden Gate Park</a>
+                <a href="{% url 'borough-details' 'noe-valley' %}">Noe Valley</a>
+                <a href="{% url 'borough-details' 'nob-hill' %}">Nob Hill</a>
+                <a href="{% url 'borough-details' 'north-beach' %}">North Beach</a>
+                <a href="{% url 'borough-details' 'russian-hill' %}">Russian Hill</a>
+                <a href="{% url 'borough-details' 'western-addition' %}">Western Addition</a>
+                <a href="{% url 'borough-details' 'south-of-market' %}">South of Market</a>
+                <a href="{% url 'borough-details' 'potrero-hill' %}">Potrero Hill</a>
+                <a href="{% url 'borough-details' 'haight-ashbury' %}">Haight-Ashbury</a>
+                <a href="{% url 'borough-details' 'presidio-heights' %}">Presidio Heights</a>
+                <a href="{% url 'borough-details' 'seacliff' %}">Seacliff</a>
+                <a href="{% url 'borough-details' 'outer-richmond' %}">Outer Richmond</a>
+                <a href="{% url 'borough-details' 'inner-richmond' %}">Inner Richmond</a>
+                <a href="{% url 'borough-details' 'outer-sunset' %}">Outer Sunset</a>
+                <a href="{% url 'borough-details' 'west-of-twin-peaks' %}">West of Twin Peaks</a>
+                <a href="{% url 'borough-details' 'glen-park' %}">Glen Park</a>
+                <a href="{% url 'borough-details' 'bernal-heights' %}">Bernal Heights</a>
+                <a href="{% url 'borough-details' 'bayview' %}">Bayview</a>
+                <a href="{% url 'borough-details' 'excelsior' %}">Excelsior</a>
+                <a href="{% url 'borough-details' 'visitacion-valley' %}">Visitacion Valley</a>
+                <a href="{% url 'borough-details' 'crocker-amazon' %}">Crocker-Amazon</a>
+                <a href="{% url 'borough-details' 'outer-mission' %}">Outer Mission</a>
+                <a href="{% url 'borough-details' 'oceanview' %}">Oceanview</a>
+                <a href="{% url 'borough-details' 'diamond-heights' %}">Diamond Heights</a>
+                <a href="{% url 'borough-details' 'parkside' %}">Parkside</a>
+                <a href="{% url 'borough-details' 'lakeshore' %}">Lakeshore</a>
+            </div>
+            <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div>
+        </div>
+    </li>
+
+</nav>
