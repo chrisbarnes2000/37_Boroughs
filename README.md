@@ -1,6 +1,6 @@
-# 37 Boroughs
+# PROJECT TITLE: 37 Boroughs
 
-### Created by: Alanna, Ariane, Chris, Constantino, Ian
+## Created by: Alanna, Ariane, Chris, Constantino, Ian
 
 ![image](/static/images/SF_README.jpeg)
 
