@@ -7,6 +7,7 @@
   grid-template-rows: repeat(6, 100px);
   grid-gap: 15px;
   grid-template-areas: "a a a b b b"
+    "a a a b b b"
     "c c d d e e"
     "f f d d g g"
     "f f h h g g"
