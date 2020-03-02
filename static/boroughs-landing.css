@@ -1,4 +1,4 @@
-.container {
+.landing-container {
   /* Edited  by Ian to fix layout of landing.html*/
   width: 600px;
   height: auto;
@@ -14,15 +14,15 @@
     "g g h h f f";
 }
 
-.container>div {
+.landing-container>div {
   transition: 400ms;
 }
 
-.container>div:hover {
+.landing-container>div:hover {
   background-color: bisque;
 }
 
-.container>div:hover>h3 {
+.landing-container>div:hover>h3 {
   color: red;
 }
 
