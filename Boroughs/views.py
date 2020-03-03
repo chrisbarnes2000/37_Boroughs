@@ -68,7 +68,7 @@ class Detail_Borough_View(DetailView):
 
 class Edit_Borough_View(UpdateView):
     model = Borough
-    fields = ['title', 'slug, ''zipcode', 'content', 'main_img', 'sources']
+    fields = ['title', 'zipcode', 'content', 'main_img', 'sources']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

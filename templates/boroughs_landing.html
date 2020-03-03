@@ -11,34 +11,46 @@
 {% block content %}
 <div class="landing-container">
     <div class="a">
-        <a href="{% url 'borough-details' 'chinatown' %}">
+        <a href="{% url 'borough-details' 'chinatownnob-hill' %}">
             <img src="{% static 'images/Landing/chinatown-nobhill-main.png' %}" alt="Chinatown">
             <div class="a-title centered">Chinatown</div>
         </a>
     </div>
     <div class="b">
-        <img src="{% static 'images/Landing/soma-main.jpg' %}" alt="SoMa">
-        <div class="h-title centered">SoMa</div>
+        <a href="{% url 'borough-details' 'south-of-market' %}">
+            <img src="{% static 'images/Landing/soma-main.jpg' %}" alt="SoMa">
+            <div class="h-title centered">SoMa</div>
+        </a>
     </div>
     <div class="d">
-        <img src="{% static 'images/Landing/downtown-civiccenter-main.jpeg' %}" alt="Downtown / Civic Center">
-        <div class="c-title centered">Downtown / Civic Center</div>
+        <a href="{% url 'borough-details' 'downtowncivic-center' %}">
+            <img src="{% static 'images/Landing/downtown-civiccenter-main.jpeg' %}" alt="Downtown / Civic Center">
+            <div class="c-title centered">Downtown / Civic Center</div>
+        </a>
     </div>
     <div class="e">
-        <img src="{% static 'images/Landing/haight-main.jpg' %}" alt="Haight">
-        <div class="d-title centered">Haight</div>
+        <a href="{% url 'borough-details' 'test' %}">
+            <img src="{% static 'images/Landing/haight-main.jpg' %}" alt="Haight">
+            <div class="d-title centered">Haight</div>
+        </a>
     </div>
     <div class="f">
-        <img src="{% static 'images/Landing/westernaddition-main.jpg' %}" alt="Western Addition">
-        <div class="g-title centered">Western Addition</div>
+        <a href="{% url 'borough-details' 'western-addition' %}">
+            <img src="{% static 'images/Landing/westernaddition-main.jpg' %}" alt="Western Addition">
+            <div class="g-title centered">Western Addition</div>
+        </a>
     </div>
     <div class="g">
-        <img src="{% static 'images/Landing/seacliff-main.jpg' %}" alt="Seacliff">
-        <div class="f-title centered">Seacliff</div>
+        <a href="{% url 'borough-details' 'seacliff' %}">
+            <img src="{% static 'images/Landing/seacliff-main.jpg' %}" alt="Seacliff">
+            <div class="f-title centered">Seacliff</div>
+        </a>
     </div>
     <div class="h">
-        <img src="{% static 'images/Landing/noe-valley-bernal-heights-main.jpg' %}" alt="Noe Valley / Bernal Heights">
-        <div class="b-title centered">Noe Valley / Bernal Heights</div>
+        <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}">
+            <img src="{% static 'images/Landing/noe-valley-bernal-heights-main.jpg' %}" alt="Noe Valley / Bernal Heights">
+            <div class="b-title centered">Noe Valley / Bernal Heights</div>
+        </a>
     </div>
 </div>
 </div>
