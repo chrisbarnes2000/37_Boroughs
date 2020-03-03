@@ -53,7 +53,7 @@
   opacity: 0
 }
 
-.a:hover {
+.centered:hover {
   opacity: 1;
   transition: 400ms;
 }
