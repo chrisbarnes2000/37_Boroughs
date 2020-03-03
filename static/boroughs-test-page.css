@@ -36,6 +36,12 @@
   grid-area: a;
   position: relative;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  color: white;
+  opacity: 0
 }
 
 .centered {
@@ -47,7 +53,7 @@
   opacity: 0
 }
 
-.centered:hover {
+.a:hover {
   opacity: 1;
   transition: 400ms;
 }
