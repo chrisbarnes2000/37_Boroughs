@@ -125,6 +125,10 @@ label {
     color: red;
 }
 
+.fa-street-view, .fa-home {
+    font-size: xx-large;
+}
+
 .fa-facebook {
     padding: auto;
     color: lightblue;

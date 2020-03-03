@@ -16,7 +16,13 @@ def Index(request):
         'P001001', geo={'for': 'place:67000', 'in': 'state:{}'.format(states.CA.fips)})
     Housing = c.sf1.get(
         'H001001', geo={'for': 'place:67000', 'in': 'state:{}'.format(states.CA.fips)})
-    return render(request, 'index.html', {'Census_Name': Name[0]['NAME'], 'Census_Pop': Population[0]['P001001'], 'Census_House': Housing[0]['H001001']})
+    return render(request, 'index.html', {
+        'Census_Name': Name[0]['NAME'],
+        'Census_Pop': '{:,}'.format(int(Population[0]['P001001'])), 
+        'Census_House': "{:,}".format(int(Housing[0]['H001001'])),
+    })
+
+
 
 def About(request):
     return render(request, 'about.html')

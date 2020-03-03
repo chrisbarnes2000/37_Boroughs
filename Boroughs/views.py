@@ -14,6 +14,7 @@ def logout_view(request):
 def Boroughs_Landing(request):
     return render(request, 'boroughs_landing.html')
 
+
 class Create_Borough_View(CreateView):
     model = Borough
     fields = ['title', 'zipcode', 'content', 'main_img', 'sources']
@@ -31,6 +32,7 @@ class Create_Photo_View(CreateView):
     def form_valid(self, form):
         # form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 def vote(request, borough_slug):
     borough = get_object_or_404(Borough, slug=borough_slug)
@@ -50,6 +52,7 @@ def vote(request, borough_slug):
         # user hits the Back button.
         return HttpResponseRedirect(reverse('borough-details', slug=borough.slug))
 
+
 class Display_Boroughs_View(ListView):
     template_name = 'Boroughs/display_boroughs.html'
     context_object_name = 'Boroughs'
@@ -61,6 +64,7 @@ class Display_Boroughs_View(ListView):
 class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
+
 
 class Edit_Borough_View(UpdateView):
     model = Borough
