@@ -168,8 +168,6 @@ else:
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 
-CENSUS_BASEAPI = "https://api.census.gov/data/2010/dec/sf1?get=P001001,NAME&for=county:075&in=state:06key=%s"
-
 # PROTIP:
 # Need to override settings? Create a local_settings.py file
 # in this directory, and add settings there.

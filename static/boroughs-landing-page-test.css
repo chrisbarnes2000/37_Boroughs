@@ -31,14 +31,13 @@
   width: 100%;
   height: 100%;
 }
-
 .a {
   grid-area: a;
   position: relative;
   text-align: center;
 }
 
-.a>div>a>img {
+.a>img {
   object-fit: cover;
   width: 100%;
   height: 100%;
