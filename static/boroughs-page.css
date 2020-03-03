@@ -50,10 +50,6 @@
   left: 25%;
   height: 30px;
   width: 146px;
-}
-
-.centered {
-  border: 4px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +58,8 @@
   opacity: 0
 }
 
-.centered:hover {
+
+.a-title:hover {
   opacity: 1;
   transition: 400ms;
 }

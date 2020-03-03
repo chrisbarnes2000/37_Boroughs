@@ -3,7 +3,7 @@
 {% load static %}
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'boroughs-landing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'boroughs-page.css' %}">
 {% endblock %}
 
 {% block title %}All 37 Boroughs{% endblock %}
@@ -19,37 +19,37 @@
     <div class="b">
         <a href="{% url 'borough-details' 'south-of-market' %}">
             <img src="{% static 'images/Landing/soma-main.jpg' %}" alt="SoMa">
-            <div class="h-title centered">SoMa</div>
+            <div class="b-title centered">SoMa</div>
         </a>
     </div>
     <div class="d">
         <a href="{% url 'borough-details' 'downtowncivic-center' %}">
             <img src="{% static 'images/Landing/downtown-civiccenter-main.jpeg' %}" alt="Downtown / Civic Center">
-            <div class="c-title centered">Downtown / Civic Center</div>
+            <div class="d-title centered">Downtown / Civic Center</div>
         </a>
     </div>
     <div class="e">
         <a href="{% url 'borough-details' 'test' %}">
             <img src="{% static 'images/Landing/haight-main.jpg' %}" alt="Haight">
-            <div class="d-title centered">Haight</div>
+            <div class="e-title centered">Haight</div>
         </a>
     </div>
     <div class="f">
         <a href="{% url 'borough-details' 'western-addition' %}">
             <img src="{% static 'images/Landing/westernaddition-main.jpg' %}" alt="Western Addition">
-            <div class="g-title centered">Western Addition</div>
+            <div class="f-title centered">Western Addition</div>
         </a>
     </div>
     <div class="g">
         <a href="{% url 'borough-details' 'seacliff' %}">
             <img src="{% static 'images/Landing/seacliff-main.jpg' %}" alt="Seacliff">
-            <div class="f-title centered">Seacliff</div>
+            <div class="g-title centered">Seacliff</div>
         </a>
     </div>
     <div class="h">
         <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}">
             <img src="{% static 'images/Landing/noe-valley-bernal-heights-main.jpg' %}" alt="Noe Valley / Bernal Heights">
-            <div class="b-title centered">Noe Valley / Bernal Heights</div>
+            <div class="h-title centered">Noe Valley / Bernal Heights</div>
         </a>
     </div>
 </div>
