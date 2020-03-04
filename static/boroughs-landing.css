@@ -58,7 +58,7 @@ a > img {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 34px;
+  font-size: 28px;
   color: white;
   /* opacity: 1 */
 }
@@ -153,16 +153,17 @@ e.title {
   text-align: center;
 }
 
-.f>a {
+.f>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-f-title {
+.f-title {
   position: absolute;
   width: 146px;
-  height: 30px;
+  height: 98px;
+  left: 12%;
 }
 
 .g {
@@ -171,7 +172,7 @@ f-title {
   text-align: center;
 }
 
-.g>img {
+.g>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -181,6 +182,7 @@ f-title {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
 }
 
 .h {
@@ -189,16 +191,18 @@ f-title {
   text-align: center;
 }
 
-.h>img {
+.h>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.h>.h-title {
+.h-title {
   position: absolute;
   width: 146px;
   height: 30px;
+  font-size: 15px;
+  left: 12%;
 }
 
 .i {
