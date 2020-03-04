@@ -14,15 +14,15 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a></li>
             </ul>
         </div>
+        {% if user.is_authenticated %}
+            <div class="text-black">Hello, <strong>{{ user }}</strong>!</div>
+            <a href="/Admin/logout/" class="btn btn-danger ml-4 mr-2">Log Out</a>
         {% comment %}
-        <!-- {% if user.is_authenticated %}
-            <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
-            <a href="{% url 'account_logout' %}" class="btn btn-danger ml-4 mr-2">Log Out</a>
-        {% else %}
+        <!--{% else %}
             <a href="{% url 'account_login' %}" class="btn btn-secondary ml-2">Log In</a>
-            <a href="{% url 'account_signup' %}" class="btn btn-secondary mr-2">Sign Up</a>
-        {% endif %} -->
+            <a href="{% url 'account_signup' %}" class="btn btn-secondary mr-2">Sign Up</a>     -->
         {% endcomment %}
+        {% endif %} 
 
         
     </div>

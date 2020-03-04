@@ -15,8 +15,7 @@ class BoroughTestCase(TestCase):
         """ Tests the slug generated when saving a Page. """
         # Author is a required field in our model.
         # Create a user for this test and save it to the test database.
-        user = User()
-        user.save()
+        user = User.objects.create()
 
         # Create and save a new page to the test database.
         page = Borough(title="My Test Page", content="test", author=user)
@@ -27,31 +26,31 @@ class BoroughTestCase(TestCase):
         self.assertEqual(page.slug, "my-test-page")
 
 
-# class BoroughListViewTests(TestCase):
-#     def test_multiple_pages(self):
-#         # Make some test data to be displayed on the page.
-#         user = User.objects.create()
+class BoroughListViewTests(TestCase):
+    def test_multiple_pages(self):
+        # Make some test data to be displayed on the page.
+        user = User.objects.create()
 
-#         Borough.objects.create(title="My Test Page", content="test", author=user)
-#         Borough.objects.create(title="Another Test Page", content="test", author=user)
+        Borough.objects.create(title="My Test Page", content="test", author=user)
+        Borough.objects.create(title="Another Test Page", content="test", author=user)
 
-#         # Issue a GET request to the 37 boroughs list page.
-#         # When we make a request, we get a response back.
-#         response = self.client.get('Boroughs/model/')
+        # Issue a GET request to the 37 boroughs list page.
+        # When we make a request, we get a response back.
+        response = self.client.get('/Boroughs/models/')
 
         # Check that the response is 200 OK.
-        # self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
-#         # Check that the number of pages passed to the template
-#         # matches the number of pages we have in the database.
-#         responses = response.context['Booroughs']
-#         self.assertEqual(len(responses), 2)
+        # Check that the number of pages passed to the template
+        # matches the number of pages we have in the database.
+        responses = response.context['Boroughs']
+        self.assertEqual(len(responses), 2)
 
-#         self.assertQuerysetEqual(
-#             responses,
-#             ['<Borough: My Test Page>', '<Borough: Another Test Page>'],
-#             ordered=False
-#         )
+        self.assertQuerysetEqual(
+            responses,
+            ['<Borough: My Test Page>', '<Borough: Another Test Page>'],
+            ordered=False
+        )
 
 
 class BoroughDetailViewTests(TestCase):
@@ -82,13 +81,20 @@ class BoroughDetailViewTests(TestCase):
         self.assertEqual(response2.status_code, 200)
 
 
-# class BoroughCreateViewTest(TestCase):
-#     def test(self):
-#         user = User.objects.create()
+class BoroughCreateViewTest(TestCase):
+    def test(self):
+        user = User.objects.create()
 
-#         # Make some test data to be sent through the create page.
-#         data = {"title": "my-test-page", "content": "test", "author": user}
+        # Make some test data to be sent through the create page.
+        data = {
+            "title": "my-test-page",
+            "zipcode": "9410",
+            "content": "test",
+            "main_img": "{% static 'images/Landing/chinatown-nobhill-main.png' %}",
+            "sources": "https://google.com",
+            "author": user
+        }
 
-#         response = self.client.post('borough-details', data=data)
+        response = self.client.post('/Boroughs/create-borough', data=data)
 
-#         self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 301)
