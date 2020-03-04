@@ -59,7 +59,7 @@ a > img {
   justify-content: center;
   align-items: center;
   font-size: 34px;
-  color: black;
+  color: white;
   /* opacity: 1 */
 }
 
@@ -109,26 +109,6 @@ a > img {
 
 /* Downtown */
 
-.c {
-  grid-area: c;
-  position: relative;
-  text-align: center;
-}
-
-.c>div>a {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.c-title {
-  position: absolute;
-  top: 30%;
-  left: 11%;
-  width: 146px;
-  height: 30px;
-}
-
 .d {
   grid-area: d;
   position: relative;
@@ -139,9 +119,10 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
 }
 
-.d>img {
+.d>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -153,16 +134,17 @@ a > img {
   text-align: center;
 }
 
-.e>img {
+.e>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.e>e.title {
+e.title {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 24%;
 }
 
 .f {
@@ -171,13 +153,13 @@ a > img {
   text-align: center;
 }
 
-.f>img {
+.f>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.f>.f-title {
+f-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -195,7 +177,7 @@ a > img {
   height: 100%;
 }
 
-.g>.g-title {
+.g-title {
   position: absolute;
   width: 146px;
   height: 30px;
