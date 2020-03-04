@@ -65,7 +65,7 @@ a > img {
 
 .centered:hover {
   opacity: 1;
-  transition: 1000ms;
+  transition: 500ms;
 }
 /* Chinatown */
 .a {
@@ -120,6 +120,7 @@ a > img {
   width: 146px;
   height: 30px;
   left: 12%;
+  top: 36%;
 }
 
 .d>div>a {
@@ -145,7 +146,10 @@ a > img {
   width: 146px;
   height: 30px;
   left: 12%;
+  top: 45%;
 }
+
+/* Western Addition */
 
 .f {
   grid-area: f;
@@ -164,7 +168,10 @@ a > img {
   width: 146px;
   height: 98px;
   left: 12%;
+  top: 44%;
 }
+
+/* Sea Cliff */
 
 .g {
   grid-area: g;
@@ -184,6 +191,8 @@ a > img {
   height: 30px;
   left: 12%;
 }
+
+/*noe Valley/Bernal Heights*/
 
 .h {
   grid-area: h;
