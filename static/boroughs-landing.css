@@ -60,7 +60,7 @@ a > img {
   align-items: center;
   font-size: 28px;
   color: white;
-  /* opacity: 1 */
+  opacity: 0
 }
 
 .centered:hover {
@@ -140,7 +140,7 @@ a > img {
   height: 100%;
 }
 
-e.title {
+.e-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -200,7 +200,7 @@ e.title {
 .h-title {
   position: absolute;
   width: 146px;
-  height: 30px;
+  height: 47px;
   font-size: 15px;
   left: 12%;
 }
