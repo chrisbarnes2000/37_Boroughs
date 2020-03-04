@@ -33,7 +33,7 @@
   align-items: center;
   font-size: 28px;
   color: white;
-  /* opacity: 0 */
+  opacity: 0
 }
 
 .centered:hover {
@@ -119,6 +119,8 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
+  top: 36%;
 }
 
 .d>div>a {
@@ -133,7 +135,7 @@ a > img {
   text-align: center;
 }
 
-.e>img {
+.e>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -143,6 +145,8 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
+  top: 45%;
 }
 
 .f {
@@ -151,7 +155,7 @@ a > img {
   text-align: center;
 }
 
-.f>img {
+.f>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -161,6 +165,8 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
+  top: 44%;
 }
 
 .g {
@@ -169,7 +175,7 @@ a > img {
   text-align: center;
 }
 
-.g>img {
+.g>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -187,7 +193,7 @@ a > img {
   text-align: center;
 }
 
-.h>img {
+.h>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -197,6 +203,8 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  font-size: 15px;
+  left: 12%;
 }
 
 .i {
@@ -205,7 +213,7 @@ a > img {
   text-align: center;
 }
 
-.i>img {
+.i> {
   object-fit: cover;
   width: 100%;
   height: 100%;
