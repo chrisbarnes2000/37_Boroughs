@@ -99,10 +99,9 @@ a > img {
   height: 100%;
 }
 
-.b>.b-title {
+.b-title {
   position: absolute;
-  top: 41%;
-  right: 25%;
+  left: 33%;
   height: 30px;
   width: 146px;
 }
