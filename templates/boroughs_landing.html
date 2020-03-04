@@ -2,8 +2,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'boroughs-landing-page-test.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/boroughs-landing-styles.css' %}">
 {% endblock %}
 
 {% block title %}All 37 Boroughs{% endblock %}
@@ -41,16 +41,16 @@
         </a>
     </div>
     <div class="g">
-        <a href="{% url 'borough-details' 'seacliff' %}">
+        <!-- <a href="{% url 'borough-details' 'seacliff' %}"> -->
             <img src="{% static 'images/Landing/seacliff-main.jpg' %}" alt="Seacliff">
             <div class="g-title centered">Seacliff</div>
-        </a>
+        <!-- </a> -->
     </div>
     <div class="h">
-        <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}">
+        <!-- <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}"> -->
             <img src="{% static 'images/Landing/noe-valley-bernal-heights-main.jpg' %}" alt="Noe Valley / Bernal Heights">
             <div class="h-title centered">Noe Valley / Bernal Heights</div>
-        </a>
+        <!-- </a> -->
     </div>
 </div>
 </div>

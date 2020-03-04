@@ -8,7 +8,10 @@ from Boroughs.views import *
 urlpatterns = [
     # Boroughs Pages list of all pages
     path('', Boroughs_Landing, name='boroughs_landing'),
-    path('model/', Display_Boroughs_View.as_view(), name='boroughs'),
+    path('models/', Display_Boroughs_View.as_view(), name='boroughs'),
+
+    # Create new Borough need to be logged in at min
+    path('new/', Create_Borough_View.as_view(), name='create-borough'),
 
     # Contribution Pages to Upload images
     path('contribute/photo', Create_Photo_View.as_view(), name='image-upload'),
@@ -26,5 +29,5 @@ urlpatterns = [
     path('<str:slug>/delete/', Delete_Borough_View.as_view(), name='delete-borough'),
 
     # Vote Page for a boroughs photo
-    path('<str:slug>/vote/', vote, name='vote'),
+    # path('<str:slug>/vote/', vote, name='vote'),
 ]

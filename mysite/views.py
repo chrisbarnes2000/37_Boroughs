@@ -17,7 +17,7 @@ def Index(request):
     Housing = c.sf1.get(
         'H001001', geo={'for': 'place:67000', 'in': 'state:{}'.format(states.CA.fips)})
     return render(request, 'index.html', {
-        'Census_Name': Name[0]['NAME'],
+        'Census_Name': Name[0]['NAME'] + " 2010",
         'Census_Pop': '{:,}'.format(int(Population[0]['P001001'])), 
         'Census_House': "{:,}".format(int(Housing[0]['H001001'])),
     })

@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponse, HttpResponseRedirect
@@ -34,23 +35,23 @@ class Create_Photo_View(CreateView):
         return super().form_valid(form)
 
 
-def vote(request, borough_slug):
-    borough = get_object_or_404(Borough, slug=borough_slug)
-    try:
-        selected_photo = borough.photo_set.get(pk=request.POST['photo'])
-    except (KeyError, Photo.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'Boroughs/borough.html', {
-            'borough': Borough,
-            'error_message': "You didn't select a photo.",
-        })
-    else:
-        selected_photo.votes += 1
-        selected_photo.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('borough-details', slug=borough.slug))
+# def vote(request, borough_slug):
+#     borough = get_object_or_404(Borough, slug=borough_slug)
+#     try:
+#         selected_photo = borough.photo_set.get(pk=request.POST['photo'])
+#     except (KeyError, Photo.DoesNotExist):
+#         # Redisplay the question voting form.
+#         return render(request, 'Boroughs/borough.html', {
+#             'borough': Borough,
+#             'error_message': "You didn't select a photo.",
+#         })
+#     else:
+#         selected_photo.votes += 1
+#         selected_photo.save()
+#         # Always return an HttpResponseRedirect after successfully dealing
+#         # with POST data. This prevents data from being posted twice if a
+#         # user hits the Back button.
+#         return HttpResponseRedirect(reverse('borough-details', slug=borough.slug))
 
 
 class Display_Boroughs_View(ListView):
