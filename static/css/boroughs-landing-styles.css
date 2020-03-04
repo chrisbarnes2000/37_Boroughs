@@ -26,11 +26,27 @@
   color: red;
 }
 
-.gallery-pic {
-  object-fit: cover;
+.centered {
+  border: 4px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: white;
+  /* opacity: 0 */
+}
+
+.centered:hover {
+  opacity: 1;
+  transition: 1000ms;
+}
+
+a > img {
   width: 100%;
   height: 100%;
 }
+
+/* Chinatown */
 .a {
   grid-area: a;
   position: relative;
@@ -47,38 +63,24 @@
   position: absolute;
   top: 41%;
   left: 25%;
-  height: 30px;
-  width: 146px;
+  height: 40px;
+  width: 165px;
 }
 
-.centered {
-  border: 4px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 34px;
-  color: white;
-  opacity: 0
-}
-
-.centered:hover {
-  opacity: 1;
-  transition: 400ms;
-}
-
+/* SoMa */
 .b {
   grid-area: b;
   position: relative;
   text-align: center;
 }
 
-.b>img {
+.b>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.b>.b-title {
+.b-title {
   position: absolute;
   top: 41%;
   right: 25%;
@@ -86,19 +88,20 @@
   width: 146px;
 }
 
+/* Downtown/Civic Center */
 .c {
   grid-area: c;
   position: relative;
   text-align: center;
 }
 
-.c>img {
+.c>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.c>.c-title {
+.c-title {
   position: absolute;
   top: 30%;
   left: 11%;
@@ -112,13 +115,13 @@
   text-align: center;
 }
 
-.d>.d-title {
+.d-title {
   position: absolute;
   width: 146px;
   height: 30px;
 }
 
-.d>img {
+.d>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -136,7 +139,7 @@
   height: 100%;
 }
 
-.e>e.title {
+.e-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -154,7 +157,7 @@
   height: 100%;
 }
 
-.f>.f-title {
+.f-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -172,7 +175,7 @@
   height: 100%;
 }
 
-.g>.g-title {
+.g-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -190,7 +193,7 @@
   height: 100%;
 }
 
-.h>.h-title {
+.h-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -208,7 +211,7 @@
   height: 100%;
 }
 
-.i>.i-title {
+.i-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -226,7 +229,7 @@
   height: 100%;
 }
 
-.j>.j-title {
+.j-title {
   position: absolute;
   width: 146px;
   height: 30px;
