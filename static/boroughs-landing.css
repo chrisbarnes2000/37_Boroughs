@@ -1,3 +1,21 @@
+/* START MOVE */
+a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-self: center;
+  align-items: center;
+}
+
+a > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+/* END MOVE */
 .landing-container {
   /* Edited  by Ian to fix layout of landing.html*/
   width: 600px;
@@ -26,6 +44,13 @@
   color: red;
 }
 
+.gallery-pic {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+}
+
 .centered {
   border: 4px solid white;
   display: flex;
@@ -38,14 +63,8 @@
 
 .centered:hover {
   opacity: 1;
-  transition: 1000ms;
+  transition: 500ms;
 }
-
-a > img {
-  width: 100%;
-  height: 100%;
-}
-
 /* Chinatown */
 .a {
   grid-area: a;
@@ -53,7 +72,7 @@ a > img {
   text-align: center;
 }
 
-.a>img {
+.a>div>a {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -66,7 +85,6 @@ a > img {
   height: 40px;
   width: 165px;
 }
-
 /* SoMa */
 .b {
   grid-area: b;
@@ -82,32 +100,12 @@ a > img {
 
 .b-title {
   position: absolute;
-  top: 41%;
-  right: 25%;
+  left: 25%;
   height: 30px;
   width: 146px;
 }
 
-/* Downtown/Civic Center */
-.c {
-  grid-area: c;
-  position: relative;
-  text-align: center;
-}
-
-.c>div>a {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.c-title {
-  position: absolute;
-  top: 30%;
-  left: 11%;
-  width: 146px;
-  height: 30px;
-}
+/* Downtown */
 
 .d {
   grid-area: d;
@@ -149,6 +147,8 @@ a > img {
   top: 45%;
 }
 
+/* Western Addition */
+
 .f {
   grid-area: f;
   position: relative;
@@ -164,10 +164,12 @@ a > img {
 .f-title {
   position: absolute;
   width: 146px;
-  height: 30px;
+  height: 98px;
   left: 12%;
   top: 44%;
 }
+
+/* Sea Cliff */
 
 .g {
   grid-area: g;
@@ -185,7 +187,10 @@ a > img {
   position: absolute;
   width: 146px;
   height: 30px;
+  left: 12%;
 }
+
+/*noe Valley/Bernal Heights*/
 
 .h {
   grid-area: h;
@@ -202,7 +207,7 @@ a > img {
 .h-title {
   position: absolute;
   width: 146px;
-  height: 30px;
+  height: 47px;
   font-size: 15px;
   left: 12%;
 }
@@ -213,13 +218,13 @@ a > img {
   text-align: center;
 }
 
-.i> {
+.i>img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.i-title {
+.i>.i-title {
   position: absolute;
   width: 146px;
   height: 30px;
@@ -237,7 +242,7 @@ a > img {
   height: 100%;
 }
 
-.j-title {
+.j>.j-title {
   position: absolute;
   width: 146px;
   height: 30px;
