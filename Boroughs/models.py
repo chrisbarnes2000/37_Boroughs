@@ -1,3 +1,4 @@
+from embed_video.fields import EmbedVideoField
 import datetime
 
 from django.conf import settings
@@ -42,6 +43,10 @@ class Borough(models.Model):
         self.slug = slugify(self.title, allow_unicode=True)
         # Call save on the superclass.
         return super(Borough, self).save(*args, **kwargs)
+
+
+class Video(models.Model):
+    video = EmbedVideoField()  # same like models.URLField()
 
 
 class Photo(models.Model):

@@ -1,6 +1,8 @@
 <!-- templates/index.html -->
 {% extends 'base.html' %}
 {% load static %}
+{% load embed_video_tags %}
+
 {% block content %}
 <h1 class="text-center">Welcome to 37 Boroughs!</h1>
 
@@ -29,7 +31,18 @@
 
     </div>
     <div class="col">
-        <img src="{% static 'images/splash.png' %}" class="img-fluid" style="width: 100%; float: left;" />
+        <!-- The video tag: -->
+        <!-- {% video item.video as my_video %}
+            URL: {{ my_video.url }}
+            Thumbnail: {{ my_video.thumbnail }}
+            Backend: {{ my_video.backend }}
+        
+        {% video my_video "large" %}
+        {% endvideo %} -->
+        
+        <!-- Or embed shortcut: -->
+        {% video my_video '800x600' %}
+        <!-- <img src="{% static 'images/splash.png' %}" class="img-fluid" style="width: 100%; float: left;" /> -->
     </div>
 </div>
 {% endblock %}
