@@ -1,15 +1,21 @@
 <!-- templates/index.html -->
 {% extends 'base.html' %}
 {% load static %}
-{% load embed_video_tags %}
-
 {% block content %}
 <h1 class="text-center">Welcome to 37 Boroughs!</h1>
 
 <br>
 
 <div class="row">
-    <div class="col">
+    <div class="col float-right">
+        <video width="600" height="400" controls autoplay>
+            <source src="{% static 'videos/DJI_0014.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- <img src="{% static 'images/splash.png' %}" class="img-fluid" style="width: 100%; float: left;" /> -->
+    </div>
+
+    <div class="col float-left">
         <p>
             Here you will be able to discover photographs from locals and tourists alike of all 37 boroughs in San Francisco: <br>
             - Discover all the hidden gems 💎 <br>
@@ -29,20 +35,6 @@
 
         <i class="fas fa-home"></i>  {{Census_House}}
 
-    </div>
-    <div class="col">
-        <!-- The video tag: -->
-        <!-- {% video item.video as my_video %}
-            URL: {{ my_video.url }}
-            Thumbnail: {{ my_video.thumbnail }}
-            Backend: {{ my_video.backend }}
-        
-        {% video my_video "large" %}
-        {% endvideo %} -->
-        
-        <!-- Or embed shortcut: -->
-        {% video my_video '800x600' %}
-        <!-- <img src="{% static 'images/splash.png' %}" class="img-fluid" style="width: 100%; float: left;" /> -->
     </div>
 </div>
 {% endblock %}

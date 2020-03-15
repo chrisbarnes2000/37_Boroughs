@@ -1,14 +1,13 @@
 from imagekit.admin import AdminThumbnail
-from embed_video.admin import AdminVideoMixin
 from django.contrib import admin
-from Boroughs.models import Borough, Photo, Video
+from Boroughs.models import Borough, Photo
 
 class photoInline(admin.TabularInline):
     model = Photo
     extra = 0
 
 
-class BoroughsAdmin(AdminVideoMixin, admin.ModelAdmin):
+class BoroughsAdmin(admin.ModelAdmin):
     """ Show helpful fields on the changelist page. """
     search_fields = ['title', 'author']
     list_filter = ['title', 'created', 'author']
@@ -22,13 +21,7 @@ class BoroughsAdmin(AdminVideoMixin, admin.ModelAdmin):
 admin.site.register(Borough, BoroughsAdmin)
 
 
-class VideoAdmin(AdminVideoMixin, admin.ModelAdmin):
-    pass
-
-admin.site.register(Video, VideoAdmin)
-
-
-class PhotoAdmin(AdminVideoMixin, admin.ModelAdmin):
+class PhotoAdmin(admin.ModelAdmin):
     # fieldsets = [
     #     (None,               {'fields': ['borough']}),
     #     # ('Date information', {'fields': ['created'], 'classes': ['collapse']}),

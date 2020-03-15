@@ -15,7 +15,7 @@
             </ul>
         </div>
         {% if user.is_authenticated %}
-            <div class="text-black">Hello, <strong>{{ user }}</strong>!</div>
+            <a href="/Admin/"><div class="text-black">Hello, <strong>{{ user }}</strong>!</div></a>
             <a href="/Admin/logout/" class="btn btn-danger ml-4 mr-2">Log Out</a>
         {% comment %}
         <!--{% else %}
