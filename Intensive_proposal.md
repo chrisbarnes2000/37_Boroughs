@@ -51,11 +51,10 @@ Add the possibility to like and save pictures to ones account
 
 ### Chris Barnes' Goals
 
-1. Fix GitHub commits and create branches
-2. Make user accounts
-3. Help implement google maps API
-4. Add website caching
-5. Adjust account for team access
+1. Adjust account for team access
+2. Add website caching
+3. Make user accounts
+4. Help implement google maps API
 
 #### Challenges Chris Anticipates
 - Need to rebase commits and separate local and hosted databases
@@ -74,8 +73,8 @@ Add the possibility to like and save pictures to ones account
 
 ### Teammate 3: Alanna Nochie's Goals
 
-1. Goal 1
-1. Goal 2
+1. Fix GitHub commits and create branches
+1. Help implement APIs
 1. Goal 3
 
 #### Challenges Alanna Anticipates
@@ -84,9 +83,10 @@ Add the possibility to like and save pictures to ones account
 
 ### Teammate 4: Ian Rones' Goals
 
-1. Goal 1
-1. Goal 2
-1. Goal 3
+1. Recreate the website with React
+2. Make website mobile-friendly
+3. Add user contribution
+
 
 #### Challenges Ian Anticipates
 
@@ -118,8 +118,9 @@ Add the possibility to like and save pictures to ones account
 
 ## Approval Checklist
 - [ ] If I have a team project, I wrote this proposal to represent my work and only my work
-- [ ] I have completed all the necessary parts of this proposal
-- [ ] I linked my proposal in the Spring Intensive Tracker
+    > confused on the meaning of this?
+- [x] I have completed all the necessary parts of this proposal
+- [x] I linked my proposal in the Spring Intensive Tracker
 
 ### Sign off
 
