@@ -29,7 +29,7 @@ DEBUG = False
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'boroughs37.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'boroughs37-old.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
