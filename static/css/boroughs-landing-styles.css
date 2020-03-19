@@ -18,14 +18,6 @@
   transition: 400ms;
 }
 
-/* .landing-container>div:hover {
-  background-color: bisque;
-}
-
-.landing-container>div:hover>h3 {
-  color: red;
-} */
-
 .centered {
   border: 4px solid white;
   display: flex;
@@ -41,15 +33,28 @@
   transition: 1000ms;
 }
 
+.landing-container > div:hover img {
+  filter:blur(10px);
+}
+
+.landing-container a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 a > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition:1000ms;
+  position:absolute;
+  left:0;
 }
 
-.landing-container > div:hover img {
-  filter:blur(10px);
+a {
+  text-decoration: none;
 }
 
 /* Chinatown */
@@ -205,44 +210,4 @@ a > img {
   height: 30px;
   font-size: 15px;
   left: 12%;
-}
-
-.i {
-  grid-area: i;
-  position: relative;
-  text-align: center;
-}
-
-.i> {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.i-title {
-  position: absolute;
-  width: 146px;
-  height: 30px;
-}
-
-.j {
-  grid-area: j;
-  position: relative;
-  text-align: center;
-}
-
-.j>img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-.j-title {
-  position: absolute;
-  width: 146px;
-  height: 30px;
-}
-
-a {
-  text-decoration: none;
 }
