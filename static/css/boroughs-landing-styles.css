@@ -19,7 +19,6 @@
 }
 
 .centered {
-  border: 4px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
