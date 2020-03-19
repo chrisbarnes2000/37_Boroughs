@@ -1,8 +1,7 @@
 <!-- Footer -->
 <footer class='font-small text-black bg-white' id="footer">
-    <div class='container-fluid row text-center pt-3'>
-        <div class='col-md-3 mb-md-0'>
-            <h5 class='text-uppercase'>Socials Links</h5>
+    <div class='container-fluid d-flex flex-row align-items-center justify-content-around pt-3'>
+        <div class='col-md-3 mb-md-0' style="display: flex; justify-content: center;">
             <ul class="socials">
                 <!-- <a href='https://twitter.com'><i class="fab fa-twitter"></i></a>
                 <a href='https://facebook.com'><i class="fab fa-facebook"></i></a>
@@ -15,13 +14,10 @@
             </ul>
         </div>
         
-        <div class='col-md-6 mb-md-0 footer-copyright text-center text-black'>© {% now "Y" %} Copyright: Thirty-Seven Boroughs. All Rights Reserved.</div>
+        <div class='col-md-6 mb-md-0 footer-copyright text-center small text-black'>© {% now "Y" %} Copyright: Thirty-Seven Boroughs. All Rights Reserved.</div>
         
         <div class='col-md-3 mb-md-0'>
-            <h5 class='text-uppercase'>Page Links</h5>
-            <ul class='list-unstyled'>
-                <li><a class="nav-link" href="{% url 'creators' %}">Creators</a></li>
-            </ul>
+            <a style="color:black; display: flex; justify-content: center;" class="nav-link" href="{% url 'creators' %}">Creators</a>
         </div>
 
     </div>
