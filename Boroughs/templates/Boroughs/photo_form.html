@@ -7,8 +7,8 @@
 {% block content %}
 <div class="row">
     <div class="col">
-        <h1 class="text-center">We Need Your Pictures!</h1>
-        <p>Please provide us with context related to this photo, it can be as simple as I was out in this area and took a cool photo id like to share.
+        <h1 class="text-center" style="margin-top: 60px;">We Need Your Pictures!</h1>
+        <p class="mb-6">Please provide us with context related to this photo, it can be as simple as I was out in this area and took a cool photo id like to share.
         We would also like your first and Last name and an email address so that we may be able to further contact you if we have questions about your uploaded photo</p>
 
         <form class="form-horizontal mt-3" action="" method="POST" enctype="multipart/form-data">
@@ -45,13 +45,13 @@
                 </div>
             </div>
 
-            <div class="form-row mt-3 mb-3">
-                <div class="col">
+            <div class="d-flex flex-row align-items-center justify-content-around mt-3 mb-3">
+                <div class="col ml-5">
                     <span class="text-danger small">{{ form.borough.errors }}</span>
                     <span>What Borough</span>
                     <div>{{ form.borough }}</div>
                 </div>
-                <div class="col mt-3">
+                <div class="col-4 mt-3">
                     <span class="text-danger small">{{ form.image.errors }}</span>
                     <input type="file" name="{{ form.image.name }}" id="id_{{ form.image.name }}">
                 </div>
