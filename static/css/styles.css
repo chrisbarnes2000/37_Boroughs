@@ -68,6 +68,10 @@ body {
     border: none;
 }
 
+#myNav {
+    margin-right: 0;
+}
+
 /* Fonts */
 p {
     font-size: 16px;
@@ -186,10 +190,11 @@ img {
   padding: none;
 }
 
-/* ---Drop Down---- */
+/* ---Drop Down / Navbar---- */
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-left: 90px;
 }
 
 .dropdown-content {
@@ -215,4 +220,14 @@ img {
 
 .show {
   display: block;
+}
+/* FOOTER */
+.footer-alink {
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+.footer-alink:hover {
+    color: #707070;
+    font-size: 20px;
 }
