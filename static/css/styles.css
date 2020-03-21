@@ -71,6 +71,9 @@ body {
 #myNav {
     margin-right: 0;
 }
+.navbar-brand:hover {
+    text-shadow: 2px 2px 5px #707070;
+}
 
 /* Fonts */
 p {
@@ -228,6 +231,6 @@ img {
     justify-content: center;
 }
 .footer-alink:hover {
-    color: #707070;
+    text-shadow: 1px 2px #707070;
     font-size: 20px;
 }

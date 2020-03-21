@@ -3,12 +3,12 @@
 {% block content %}
 <div class="row">
     <div class="col m-4">
-        <a href="{% url 'boroughs_landing' %}" class="btn btn-success float-right">Back to List</a>
+        <a href="{% url 'boroughs_landing' %}" class="btn btn-link float-right">Back to List</a>
         <div class="row">
             <h2>
                 {{ borough.title }} {{ borough.zipcode }}
-                <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
-                    {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small>
+                <!-- <small class="text-muted">Last updated by <b>{{ borough.author.username }}</b> on
+                    {{ borough.modified|date:"SHORT_DATETIME_FORMAT" }} </small> -->
             </h2>
             {% if user.is_authenticated and user.is_staff %}
                 <a href="{% url 'edit-borough' slug=borough.slug %}"><i class="fas fa-edit"></i></a>
@@ -23,7 +23,7 @@
             <div class="col" style="margin-top: 3em; margin-bottom: 2em;">
                 <p>{{ borough.content|linebreaksbr }}</p>
                 {% if borough.sources %}
-                    <a href="{{ borough.sources }}">Source For Information</a>
+                    <a class="float-right" href="{{ borough.sources }}">More Content</a>
                 {% endif %}
             </div>
             <div class="col text-center">
