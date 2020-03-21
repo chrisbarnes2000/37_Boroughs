@@ -8,11 +8,12 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="d-flex flex-row justify-content-space navbar-nav" id="myNav">
+            <ul class="d-flex flex-row justify-content-space navbar-nav" id="myNav" width=100%>
                 <li class="flex-fill nav-item"><a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a></li>
 
                 <li class="flex-fill nav-item"><a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a></li>
-                <li class="dropdown">
+                
+                <li class="dropdown float-right">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <label for="myInput" class="input-group-text" id="basic-addon1">

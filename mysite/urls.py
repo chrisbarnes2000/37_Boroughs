@@ -11,11 +11,6 @@ urlpatterns = [
     # Index/Landing Page
     path('', Index, name='index'),
 
-    path('yelp/', YelpBusinessSearch, name='yelp-business-search'),
-
-    # About Page
-    path('About/', About, name='about'),
-
     # Admin Site
     path('Admin/', admin.site.urls),
 

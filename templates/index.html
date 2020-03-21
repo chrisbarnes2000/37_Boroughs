@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="text-center">Welcome to 37 Boroughs!</h1>
+<h1 class="text-center mb-5">Welcome to 37 Boroughs!</h1>
 
 <div class="row d-flex">
     <div class="col float-right">
@@ -21,6 +21,8 @@
             - Upload your findings 📷 <br>
         </p>
         <p>For more information <a href="{% url 'creators' %}">about the Creators</a> please visit this link.</p>
+        
+        <hr>
         {{Census_Name}}
 
         <br>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>Discovered {% if Businesses %}<small class="text-muted">({{ Businesses|length }} Businesses{{ Businesses|length|pluralize:"s" }})</small>{% endif %}</h1>
+<hr>
+{% if Businesses %}
+    <div class="card-columns">
+        {% for Business in Businesses %}
+            {% include "partials/yelp_business_card.html" %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+{% endif %}
+{% endblock %}

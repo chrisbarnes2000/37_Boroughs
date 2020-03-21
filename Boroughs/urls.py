@@ -25,6 +25,9 @@ urlpatterns = [
     # Success Page for redirects
     path('success/', success, name='success'),
 
+    path('businesses/', YelpBusinessSearch, name='yelp-business-search'),
+    
+
     # ex: /Boroughs/chinatown/
     path('<str:slug>/', Detail_Borough_View.as_view(), name='borough-details'),
 

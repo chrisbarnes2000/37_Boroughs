@@ -7,6 +7,10 @@ from django.views.generic import *
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 
+import requests
+import json
+import os
+
 def logout_view(request):
     logout(request)
 
@@ -64,6 +68,46 @@ class Display_Boroughs_View(ListView):
 class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
+
+
+def YelpBusinessSearch(request):
+    api_key = os.getenv('Yelp_KEY')
+    headers = {'Authorization': 'Bearer %s' % api_key}
+
+    url = 'https://api.yelp.com/v3/businesses/search'
+    params = {'term': 'bookstore', 'location': 'San Francisco'}
+
+    req = requests.get(url, params=params, headers=headers)
+
+    parsed = json.loads(req.text)
+
+    businesses = parsed["businesses"]
+    # print(businesses[0])
+
+    # for business in businesses:
+    #     print("Name:", business["name"])
+    #     print("Rating:", business["rating"])
+    #     print("Address:", " ".join(business["location"]["display_address"]))
+    #     print("Phone:", business["phone"])
+    #     print("\n")
+
+    #     id = business["id"]
+
+    #     url = "https://api.yelp.com/v3/businesses/" + id + "/reviews"
+
+    #     req = requests.get(url, headers=headers)
+
+    #     parsed = json.loads(req.text)
+
+    #     reviews = parsed["reviews"]
+
+    #     print("--- Reviews ---")
+
+    #     for review in reviews:
+    #         print("User:", review["user"]["name"], "Rating:",
+    #             review["rating"], "Review:", review["text"], "\n")
+
+    return render(request, 'Boroughs/display_businesses.html', {"Businesses": businesses})
 
 
 class Edit_Borough_View(UpdateView):
