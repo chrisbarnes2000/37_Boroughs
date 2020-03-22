@@ -1,15 +1,18 @@
-from django.shortcuts import get_object_or_404, redirect, render
-from django.contrib.auth import logout
-from django.urls import reverse, reverse_lazy
-from django.http import HttpResponse, HttpResponseRedirect
-from Boroughs.models import Borough, Photo
-from django.views.generic import *
-from django.core.files.storage import FileSystemStorage
-from django.utils import timezone
-
 import requests
 import json
 import os
+
+from django.contrib.auth import logout
+from django.core.files.storage import FileSystemStorage
+from django.core.mail import send_mail, mail_admins
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse, reverse_lazy
+from django.utils import timezone
+from django.views.generic import *
+
+from Boroughs.models import Borough, Photo
+
 
 def logout_view(request):
     logout(request)
@@ -34,6 +37,13 @@ class Create_Photo_View(CreateView):
     # success_url = reverse_lazy('index')
 
     def form_valid(self, form):
+        mail_admins(
+            "New Photo For",
+            form.borough,
+            fail_silently=False,
+            connection=None,
+            html_message=None
+        )
         # form.instance.author = self.request.user
         return super().form_valid(form)
 
