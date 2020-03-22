@@ -48,9 +48,9 @@ coverage.xml
 *.log
 local_settings.py
 # if you make a change to a model tell the group comment me and push then re-un-comment
-# **/migrations/
+**/migrations/
 # if you make a change throguh admin or a form [tell the group, comment me, push, then re-un-comment]
-# db.sqlite3
+db.sqlite3
 
 # pyenv
 .python-version
