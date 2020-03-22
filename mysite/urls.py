@@ -1,11 +1,19 @@
 #mysite URL Configuration
 from django.contrib import admin
-from django.urls import include, path
+from django.conf.urls import url
+from django.urls import include, path, re_path
 
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 from mysite.views import *
+
+from rest_framework import routers
+from Our_API.views import UserViewSet, GroupViewSet, BoroughList, BoroughDetail
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
     # Index/Landing Page
@@ -15,7 +23,9 @@ urlpatterns = [
     path('Admin/', admin.site.urls),
 
     # API
-    # path('api/', include('Our_API.urls')),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('boroughs-api/', include('Our_API.urls')),
 
     # Boroughs urls
     path('Boroughs/', include('Boroughs.urls')),
