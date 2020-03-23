@@ -80,48 +80,47 @@ class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
 
-def YelpBusinessSearch(request):
-    api_key = os.getenv('Yelp_KEY')
-    headers = {'Authorization': 'Bearer %s' % api_key}
+        api_key = os.getenv('Yelp_KEY')
+        headers = {'Authorization': 'Bearer %s' % api_key}
 
-    url = 'https://api.yelp.com/v3/businesses/search'
-    params = {'term': 'bookstore', 'location': 'San Francisco'}
+        url = 'https://api.yelp.com/v3/businesses/search'
+        params = {'term': 'bookstore', 'location': 'San Francisco'}
 
-    req = requests.get(url, params=params, headers=headers)
+        req = requests.get(url, params=params, headers=headers)
 
-    parsed = json.loads(req.text)
+        parsed = json.loads(req.text)
 
-    businesses = parsed["businesses"]
+        businesses = parsed["businesses"]
 
-    # for business in businesses:
-    #     print("Name:", business["name"])
-    #     print("Rating:", business["rating"])
-    #     print("Address:", " ".join(business["location"]["display_address"]))
-    #     print("Phone:", business["phone"])
-    #     print("\n")
+        # Add in a QuerySet of all the businesses
+        context['Businesses'] = businesses
+        return context
 
-    #     id = business["id"]
+        # for business in businesses:
+        #     print("Name:", business["name"])
+        #     print("Rating:", business["rating"])
+        #     print("Address:", " ".join(business["location"]["display_address"]))
+        #     print("Phone:", business["phone"])
+        #     print("\n")
 
-    #     url = "https://api.yelp.com/v3/businesses/" + id + "/reviews"
+        #     id = business["id"]
 
-    #     req = requests.get(url, headers=headers)
+        #     url = "https://api.yelp.com/v3/businesses/" + id + "/reviews"
 
-    #     parsed = json.loads(req.text)
+        #     req = requests.get(url, headers=headers)
 
-    #     reviews = parsed["reviews"]
+        #     parsed = json.loads(req.text)
 
-    #     print("--- Reviews ---")
+        #     reviews = parsed["reviews"]
 
-    #     for review in reviews:
-    #         print("User:", review["user"]["name"], "Rating:",
-    #             review["rating"], "Review:", review["text"], "\n")
-    paginator = Paginator(businesses, 9)
+        #     print("--- Reviews ---")
 
-    page_number = request.GET.get('page')
-    businesses = paginator.get_page(page_number)
-    # return render(request, 'Boroughs/display_businesses.html', {'page_obj': page_obj, "Businesses": businesses})
-    return render(request, 'Boroughs/display_businesses.html', {"Businesses": businesses})
+        # 'Boroughs/display_businesses.html',
+        # return render(request, template_name, {"display": display, "Businesses": businesses})
 
 class Edit_Borough_View(UpdateView):
     model = Borough

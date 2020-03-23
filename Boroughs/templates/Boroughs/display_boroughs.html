@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Discovered {% if Boroughs %}<small class="text-muted">({{ Boroughs|length }}/{{ page_obj.paginator.count }} Borough{{ Boroughs|length|pluralize:"s" }})</small>{% endif %}</h1>
+<h1>Discovered
+    {% if Boroughs %}<small class="text-muted">
+        ({{ Boroughs|length }}/{{ page_obj.paginator.count }} Borough{{ Boroughs|length|pluralize:"s" }})
+    </small>{% endif %}
+</h1>
+
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
@@ -20,13 +25,15 @@
     </span>
 </div>
 <hr>
+
 {% if Boroughs %}
     <div class="card-columns">
         {% for borough in Boroughs %}
-            {% include "partials/borough_card.html" %}
+        {% include "partials/borough_card.html" %}
         {% endfor %}
     </div>
 {% else %}
     <div class="alert alert-primary" role="alert">No pages to display.</div>
 {% endif %}
+
 {% endblock %}
