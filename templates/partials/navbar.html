@@ -20,47 +20,47 @@
                             <i class="fas fa-search-location"></i>
                         </label>
                     </div>
-                    <div id="myDropdown" class="dropdown-content">
-                        <div class="menuItems">
-                            <a href="{% url 'borough-details' 'chinatownnob-hill' %}">Chinatown / Nob Hill</a>
-                            <a href="{% url 'borough-details' 'downtowncivic-center' %}">Downtown / Civic Center</a>
-                            <a href="{% url 'borough-details' 'financial-district' %}">Financial District</a>
-                            <a href="{% url 'borough-details' 'marina' %}">Marina</a>
-                            <a href="{% url 'borough-details' 'pacific-heights' %}">Pacific Heights</a>
-                            <a href="{% url 'borough-details' 'mission' %}">Mission</a>
-                            <a href="{% url 'borough-details' 'castroupper-market' %}">Castro / Upper Market</a>
-                            <a href="{% url 'borough-details' 'presidio' %}">Presidio</a>
-                            <a href="{% url 'borough-details' 'sunset' %}">Sunset</a>
-                            <a href="{% url 'borough-details' 'twin-peaks' %}">Twin Peaks</a>
-                            <a href="{% url 'borough-details' 'treasure-islandyerba-buena-island' %}">Treasure Island / Yerba Buena Island</a>
-                            <a href="{% url 'borough-details' 'golden-gate-park' %}">Golden Gate Park</a>
-                            <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}">Noe Valley / Bernal Heights</a>
-                            <!-- <a href="{% url 'borough-details' 'nob-hill' %}">Nob Hill</a> -->
-                            <a href="{% url 'borough-details' 'north-beachrussian-hill' %}">North Beach / Russian Hill</a>
-                            <!-- <a href="{% url 'borough-details' 'russian-hill' %}">Russian Hill</a> -->
-                            <a href="{% url 'borough-details' 'western-addition' %}">Western Addition</a>
-                            <a href="{% url 'borough-details' 'south-of-market' %}">South of Market</a>
-                            <a href="{% url 'borough-details' 'potrero-hill' %}">Potrero Hill</a>
-                            <a href="{% url 'borough-details' 'haight-ashbury' %}">Haight-Ashbury</a>
-                            <!-- <a href="{% url 'borough-details' 'presidio-heights' %}">Presidio Heights</a> -->
-                            <a href="{% url 'borough-details' 'seacliff' %}">Seacliff</a>
-                            <a href="{% url 'borough-details' 'richmond' %}">Richmond</a>
-                            <!-- <a href="{% url 'borough-details' 'inner-richmond' %}">Inner Richmond</a> -->
-                            <!-- <a href="{% url 'borough-details' 'outer-sunset' %}">Outer Sunset</a> -->
-                            <a href="{% url 'borough-details' 'west-of-twin-peaksoceanview' %}">West of Twin Peaks / Oceanview</a>
-                            <a href="{% url 'borough-details' 'glen-parkdiamond-heights' %}">Glen Park / Diamond Heights</a>
-                            <!-- <a href="{% url 'borough-details' 'bernal-heights' %}">Bernal Heights</a> -->
-                            <a href="{% url 'borough-details' 'bayviewvisitacion-valley' %}">Bayview / Visitacion Valley</a>
-                            <a href="{% url 'borough-details' 'excelsior' %}">Excelsior</a>
-                            <!-- <a href="{% url 'borough-details' 'visitacion-valley' %}">Visitacion Valley</a> -->
-                            <a href="{% url 'borough-details' 'crocker-amazonouter-mission' %}">Crocker-Amazon / Outer Mission</a>
-                            <!-- <a href="{% url 'borough-details' 'outer-mission' %}">Outer Mission</a> -->
-                            <!-- <a href="{% url 'borough-details' 'oceanview' %}">Oceanview</a> -->
-                            <!-- <a href="{% url 'borough-details' 'diamond-heights' %}">Diamond Heights</a> -->
-                            <a href="{% url 'borough-details' 'parksidelakeshore' %}">Parkside / Lakeshore</a>
-                            <!-- <a href="{% url 'borough-details' 'lakeshore' %}">Lakeshore</a> -->
-                        </div>
-                        <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div>
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1" onkeyup="filter()" onfocus="show_items()" id="myInput"> <!-- onblur="show_items()" -->
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                    <div class="menuItems">
+                        <a href="{% url 'borough-details' 'chinatownnob-hill' %}">Chinatown / Nob Hill</a>
+                        <a href="{% url 'borough-details' 'downtowncivic-center' %}">Downtown / Civic Center</a>
+                        <a href="{% url 'borough-details' 'financial-district' %}">Financial District</a>
+                        <a href="{% url 'borough-details' 'marina' %}">Marina</a>
+                        <a href="{% url 'borough-details' 'pacific-heights' %}">Pacific Heights</a>
+                        <a href="{% url 'borough-details' 'mission' %}">Mission</a>
+                        <a href="{% url 'borough-details' 'castroupper-market' %}">Castro / Upper Market</a>
+                        <a href="{% url 'borough-details' 'presidio' %}">Presidio</a>
+                        <a href="{% url 'borough-details' 'sunset' %}">Sunset</a>
+                        <a href="{% url 'borough-details' 'twin-peaks' %}">Twin Peaks</a>
+                        <a href="{% url 'borough-details' 'treasure-islandyerba-buena-island' %}">Treasure Island / Yerba Buena Island</a>
+                        <a href="{% url 'borough-details' 'golden-gate-park' %}">Golden Gate Park</a>
+                        <a href="{% url 'borough-details' 'noe-valleybernal-heights' %}">Noe Valley / Bernal Heights</a>
+                        <!-- <a href="{% url 'borough-details' 'nob-hill' %}">Nob Hill</a> -->
+                        <a href="{% url 'borough-details' 'north-beachrussian-hill' %}">North Beach / Russian Hill</a>
+                        <!-- <a href="{% url 'borough-details' 'russian-hill' %}">Russian Hill</a> -->
+                        <a href="{% url 'borough-details' 'western-addition' %}">Western Addition</a>
+                        <a href="{% url 'borough-details' 'south-of-market' %}">South of Market</a>
+                        <a href="{% url 'borough-details' 'potrero-hill' %}">Potrero Hill</a>
+                        <a href="{% url 'borough-details' 'haight-ashbury' %}">Haight-Ashbury</a>
+                        <!-- <a href="{% url 'borough-details' 'presidio-heights' %}">Presidio Heights</a> -->
+                        <a href="{% url 'borough-details' 'seacliff' %}">Seacliff</a>
+                        <a href="{% url 'borough-details' 'richmond' %}">Richmond</a>
+                        <!-- <a href="{% url 'borough-details' 'inner-richmond' %}">Inner Richmond</a> -->
+                        <!-- <a href="{% url 'borough-details' 'outer-sunset' %}">Outer Sunset</a> -->
+                        <a href="{% url 'borough-details' 'west-of-twin-peaksoceanview' %}">West of Twin Peaks / Oceanview</a>
+                        <a href="{% url 'borough-details' 'glen-parkvdiamond-heights' %}">Glen Park / Diamond Heights</a>
+                        <!-- <a href="{% url 'borough-details' 'bernal-heights' %}">Bernal Heights</a> -->
+                        <a href="{% url 'borough-details' 'bayviewvisitacion-valley' %}">Bayview / Visitacion Valley</a>
+                        <a href="{% url 'borough-details' 'excelsior' %}">Excelsior</a>
+                        <!-- <a href="{% url 'borough-details' 'visitacion-valley' %}">Visitacion Valley</a> -->
+                        <a href="{% url 'borough-details' 'crocker-amazonouter-mission' %}">Crocker-Amazon / Outer Mission</a>
+                        <!-- <a href="{% url 'borough-details' 'outer-mission' %}">Outer Mission</a> -->
+                        <!-- <a href="{% url 'borough-details' 'oceanview' %}">Oceanview</a> -->
+                        <!-- <a href="{% url 'borough-details' 'diamond-heights' %}">Diamond Heights</a> -->
+                        <a href="{% url 'borough-details' 'parksidelakeshore' %}">Parkside / Lakeshore</a>
+                        <!-- <a href="{% url 'borough-details' 'lakeshore' %}">Lakeshore</a> -->
                     </div>
                     <div style="display:none;" class="dropdown-header dropdown_empty">No entry found</div>
                 </div>
