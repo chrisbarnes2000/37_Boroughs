@@ -70,11 +70,11 @@ body {
 
 #myNav {
     margin-right: 0;
+    width: 100%;
 }
 .navbar-brand:hover {
     text-shadow: 2px 2px 5px #707070;
 }
-
 /* Fonts */
 p {
     font-size: 16px;
@@ -196,8 +196,7 @@ img {
 /* ---Drop Down / Navbar---- */
 .dropdown {
   position: relative;
-  display: inline-block;
-  margin-left: 90px;
+  display: inline-flex;
 }
 
 .dropdown-content {
