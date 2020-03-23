@@ -202,6 +202,7 @@ img {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 50px;
   background-color: #f6f6f6;
   min-width: 230px;
   overflow: auto;
