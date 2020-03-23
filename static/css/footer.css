@@ -18,6 +18,5 @@
     justify-content: center;
 }
 .footer-alink:hover {
-    text-shadow: 1px 2px #707070;
-    font-size: 20px;
+    text-shadow: 2px 2px 5px #707070;
 }
