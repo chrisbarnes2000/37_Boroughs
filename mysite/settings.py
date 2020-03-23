@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'storages',
 
     'Boroughs',
+    'users',
 
     # 'allauth', -->
     # 'allauth.account', -->

@@ -19,6 +19,11 @@ urlpatterns = [
     # Index/Landing Page
     path('', Index, name='index'),
 
+    # Accounts app
+    path('users/', include('django.contrib.auth.urls')),
+    path('users/', include('users.urls')),
+    # path('accounts/', include('allauth.urls')),
+
     # Admin Site
     path('Admin/', admin.site.urls),
 
