@@ -38,32 +38,55 @@
 </div>
 
 <hr>
-{% for photo in borough.photo_set.all %}
-    {% if photo.approved %}
-        <div class="row justify-content-center">
-            <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%">
-        </div>
-    {% endif %}
-{% endfor%}
+<!-- <button onclick="display_photos()">Photos</button>
+<button onclick="display_businesses()">Businesses</button> -->
 
-{% comment %}
-<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-<form action="{% url 'vote' borough.slug %}" method="POST">
-    {% csrf_token %}
+<input onclick="display_businesses()" type="button" id="cycle_display" name="cycle_display" value="{{ display }}">
+{{display}}
+<hr>
+{% if display == 'Photos' %}
     {% for photo in borough.photo_set.all %}
         {% if photo.approved %}
-        <div class="row justify-content-center">
-            <!-- <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%"> ->
-            <input type="image" class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%" name="photo" id="photo_{{ forloop.counter }}" value="{{ photo.id }}">
-        </div>
-        <div class="row justify-content-center">
-            <input type="submit" value="Like">
-            <label for="photo_{{ forloop.counter }}">{{ photo.votes }}</label>
-        </div>
+            <div class="row justify-content-center">
+                <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%">
+            </div>
         {% endif %}
     {% endfor%}
-</form> -->
-{% endcomment %}
+
+    {% comment %}
+    <!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="{% url 'vote' borough.slug %}" method="POST">
+        {% csrf_token %}
+        {% for photo in borough.photo_set.all %}
+            {% if photo.approved %}
+            <div class="row justify-content-center">
+                <!-- <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%"> ->
+                <input type="image" class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%" name="photo" id="photo_{{ forloop.counter }}" value="{{ photo.id }}">
+            </div>
+            <div class="row justify-content-center">
+                <input type="submit" value="Like">
+                <label for="photo_{{ forloop.counter }}">{{ photo.votes }}</label>
+            </div>
+            {% endif %}
+        {% endfor%}
+    </form> -->
+    {% endcomment %}
+{% elif display == 'Businesses' %}
+    <h1>Discovered {% if Businesses %}<small class="text-muted">({{ Businesses|length }}
+            Businesses{{ Businesses|length|pluralize:"s" }})</small>{% endif %}</h1>
+    <hr>
+    {% if Businesses %}
+    <div class="card-columns">
+        {% for Business in Businesses %}
+        {% include "partials/yelp_business_card.html" %}
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+    {% endif %}
+{% else %}
+    <div class="alert alert-seconday" role="alert">Somethings a mist.</div>
+{% endif %}
 
 {% endblock %}
