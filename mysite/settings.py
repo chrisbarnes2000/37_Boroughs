@@ -116,6 +116,13 @@ AUTHENTICATION_BACKENDS = (
     # 'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+ADMINS = [
+    ('Chris', 'christopher.barnes@students.makeschool.com'),
+    ('Ariane', 'ariane.evans@students.makeschool.com'),
+    ('Alanna', 'alanna.noguchi@students.makeschool.com'),
+    ('Ian', 'ian.rones@students.makeschool.com')
+]
+
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -124,6 +131,40 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.getenv('EMAIL_ACCOUNT')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'verbose': {
+#             'format': '%(levelname)s [%(asctime)s] %(module)s %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'simple'
+#         },
+#         'file': {
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'formatter': 'verbose',
+#             'filename': '/var/www/logs/ibiddjango.log',
+#             'maxBytes': 1024000,
+#             'backupCount': 3,
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'class': 'django.utils.log.AdminEmailHandler'
+#         }
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file', 'console','mail_admins'],
+#             'propagate': True,
+#             'level': 'DEBUG',
+#         },
+#     }
+# }
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
