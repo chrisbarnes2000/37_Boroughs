@@ -1,10 +1,10 @@
 import requests
 import json
 import os
-
 from django.contrib.auth import logout
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail, mail_admins
+from django.core.paginator import Paginator
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
@@ -70,6 +70,7 @@ class Create_Photo_View(CreateView):
 class Display_Boroughs_View(ListView):
     template_name = 'Boroughs/display_boroughs.html'
     context_object_name = 'Boroughs'
+    paginate_by = 9
 
     def get_queryset(self):
         return Borough.objects.all()
@@ -92,7 +93,6 @@ def YelpBusinessSearch(request):
     parsed = json.loads(req.text)
 
     businesses = parsed["businesses"]
-    # print(businesses[0])
 
     # for business in businesses:
     #     print("Name:", business["name"])
@@ -116,9 +116,12 @@ def YelpBusinessSearch(request):
     #     for review in reviews:
     #         print("User:", review["user"]["name"], "Rating:",
     #             review["rating"], "Review:", review["text"], "\n")
+    paginator = Paginator(businesses, 9)
 
+    page_number = request.GET.get('page')
+    businesses = paginator.get_page(page_number)
+    # return render(request, 'Boroughs/display_businesses.html', {'page_obj': page_obj, "Businesses": businesses})
     return render(request, 'Boroughs/display_businesses.html', {"Businesses": businesses})
-
 
 class Edit_Borough_View(UpdateView):
     model = Borough
