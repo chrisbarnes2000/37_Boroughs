@@ -98,7 +98,6 @@ class Detail_Borough_View(DetailView):
 
         # Add in a QuerySet of all the businesses
         context['Businesses'] = businesses
-        context['display'] = 'Photos'  # Businesses
         return context
 
         # for business in businesses:
