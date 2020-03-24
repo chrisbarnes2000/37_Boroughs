@@ -9,9 +9,14 @@
     <div class="container">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav m-auto" id="myNav">
+                
+                
                 <li class="nav-item d-flex justify-content-end ml-5"><a class="nav-link" href="{% url 'boroughs_landing' %}">Boroughs</a></li>
 
                 <li class="nav-item d-flex justify-content-end"><a class="nav-link" href="{% url 'image-upload' %}">Contribute Photo</a></li>
+
+
+
                 <li class="nav-item d-flex justify-content-end">
                     {% if user.is_staff %}
                         <a class="nav-link" href="/Admin/"><div class="text-black">Hello, <strong>{{ user }}</strong>!</div></a>

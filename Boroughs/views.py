@@ -53,24 +53,6 @@ class Create_Photo_View(CreateView):
 
 # Msg.attach(‘file_name.type’, content, ‘MIME / type’) 
 
-def vote(request, borough_slug):
-    borough = get_object_or_404(Borough, slug=borough_slug)
-    try:
-        selected_photo = borough.photo_set.get(pk=request.POST['photo'])
-    except (KeyError, Photo.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'Boroughs/borough.html', {
-            'borough': Borough,
-            'error_message': "You didn't select a photo.",
-        })
-    else:
-        selected_photo.votes += 1
-        selected_photo.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('borough-details', slug=borough.slug))
-
 
 class Display_Boroughs_View(ListView):
     template_name = 'Boroughs/display_boroughs.html'
@@ -84,6 +66,24 @@ class Display_Boroughs_View(ListView):
 class Detail_Borough_View(DetailView):
     model = Borough
     template_name = 'Boroughs/borough.html'
+
+    def vote(self, request):
+        borough = get_object_or_404(Borough, slug=self.slug)
+        try:
+            selected_photo = borough.photo_set.get(pk=request.POST['photo'])
+        except (KeyError, Photo.DoesNotExist):
+            # Redisplay the question voting form.
+            return render(request, 'Boroughs/borough.html', {
+                'borough': Borough,
+                'error_message': "You didn't select a photo.",
+            })
+        else:
+            selected_photo.votes += 1
+            selected_photo.save()
+            # Always return an HttpResponseRedirect after successfully dealing
+            # with POST data. This prevents data from being posted twice if a
+            # user hits the Back button.
+            return HttpResponseRedirect(reverse('borough-details', slug=borough.slug))
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

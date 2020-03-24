@@ -38,5 +38,5 @@ urlpatterns = [
     path('<str:slug>/delete/', staff_member_required(Delete_Borough_View.as_view()), name='delete-borough'),
 
     # Vote Page for a boroughs photo
-    path('<str:slug>/vote/', vote, name='vote'),
+    path('<str:slug>/vote/', Detail_Borough_View.vote, name='vote'),
 ]
