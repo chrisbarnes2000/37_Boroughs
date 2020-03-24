@@ -15,16 +15,14 @@ html,body{
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
-    background-color: rgba(0,0,0,0.5) !important;
     }
     
     .card-header h3{
-    color: white;
+    color: black;
     }
 
     .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
     color: black;
     border:0 !important;
     }
@@ -36,7 +34,7 @@ html,body{
     }
     
     .remember{
-    color: white;
+    color: black;
     }
     
     .remember input
@@ -49,17 +47,16 @@ html,body{
     
     .login_btn{
     color: black;
-    background-color: #FFC312;
     width: 100px;
     }
     
     .login_btn:hover{
-    color: black;
+    color: rgba(0, 0, 0, 0.5);
     background-color: white;
     }
     
     .links{
-    color: white;
+    color: black;
     }
     
     .links a{
