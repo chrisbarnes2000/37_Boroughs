@@ -108,13 +108,12 @@ img {
 /* Card -> Log in*/
 
 .card{
-    height: 370px;
     margin-top: auto;
     margin-bottom: auto;
     width: 75%;
 }
 .card-header {
-    color: white;
+    color: black;
 }
 
 .input-group-prepend span {
@@ -141,7 +140,6 @@ input:focus {
 
 .login_btn {
     color: black;
-    width: 100px;
 }
 
 .login_btn:hover {
