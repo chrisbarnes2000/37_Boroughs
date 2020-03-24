@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Sign Up!</h1>
-  <hr>
-      <div class="row">
-        <div class="col">
-          <form method="post" class="mx-auto">
-            {% csrf_token %}
-            {% for field in form %}
-                {% for error in field.errors %}
-                    <p class="text-danger">{{ error }}</p>
-                {% endfor %}
-                <div class="form-group row">
-                    <div class="col-8">
-                      <label for="id_{{ field.name }}">{{ field.label|title }}:</label>
-                      <input class="form-control" type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
-                    </div>
-                </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-success">Sign up</button>
-          </form>
-        </div>
+<div class="container" style="margin-top: 16vh;">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card" style="width: 33%">
+      <div class="d-flex justify-content-center text-upper card-header">
+        <h4 class="card-title">Sign Up</h4>
       </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+              {% for error in field.errors %}
+                  <p class="text-danger">{{ error }}</p>
+              {% endfor %}
+              <div class="form-group d-flex flex-row">
+                  <div class="col-8">
+                    <label for="id_{{ field.name }}" style="color: black">{{ field.label|title }}:</label>
+                    <input style="margin-left: 40px" class="form-control" type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
+                  </div>
+              </div>
+          {% endfor %}
+          <div class="form-group d-flex pt-3" style="margin-left: 4.5rem;">
+            <button type="submit" value="Login" class="btn text-uppercase login_btn">Create Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
 {% endblock %}
