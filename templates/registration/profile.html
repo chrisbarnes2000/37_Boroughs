@@ -2,7 +2,53 @@
 
 {% block content %}
 
-<h1>This is the profiles page</h1>
-<p>it's currently under development</p>
+<div class="text-center">
+    <h1>{{ user }}'s Profiles Page</h1>
+    <p>Date Joined: {{ user.date_joined }}</p>
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <p>first name: {{ user.first_name }}</p>
+                </div>
+                <div class="col">
+                    <p>last name: {{ user.last_name }}</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <p>email: {{ user.email }}</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <p>Groups: {{ user.groups }}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            {% if user.img %}
+                <img class="img-fluid" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
+            {% else %}
+                <a href="https://placeholder.com"><img class=img-fluid"
+                    src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- <div class="row">
+        <div class="col">
+            <p>Bio: {{ user.Bio }}</p>
+        </div>
+    </div> -->
+</div>
 
 {% endblock %}
