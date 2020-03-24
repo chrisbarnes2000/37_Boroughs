@@ -1,5 +1,6 @@
 # boroughs/tests.py
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from django.conf import settings
 from django.urls import reverse
 from django.test import TestCase
 
@@ -15,7 +16,7 @@ class BoroughTestCase(TestCase):
         """ Tests the slug generated when saving a Page. """
         # Author is a required field in our model.
         # Create a user for this test and save it to the test database.
-        user = User.objects.create()
+        user = settings.AUTH_USER_MODEL.objects.create()
 
         # Create and save a new page to the test database.
         page = Borough(title="My Test Page", content="test", author=user)
@@ -29,7 +30,7 @@ class BoroughTestCase(TestCase):
 class BoroughListViewTests(TestCase):
     def test_multiple_pages(self):
         # Make some test data to be displayed on the page.
-        user = User.objects.create()
+        user = settings.AUTH_USER_MODEL.objects.create()
 
         Borough.objects.create(title="My Test Page", content="test", author=user)
         Borough.objects.create(title="Another Test Page", content="test", author=user)
@@ -56,7 +57,7 @@ class BoroughListViewTests(TestCase):
 class BoroughDetailViewTests(TestCase):
     def test_slug(self):
         # Make some test data to be displayed on the page.
-        user = User.objects.create()
+        user = settings.AUTH_USER_MODEL.objects.create()
 
         page1 = Borough.objects.create(
             title="My Test Page", content="test", author=user)
@@ -83,7 +84,7 @@ class BoroughDetailViewTests(TestCase):
 
 class BoroughCreateViewTest(TestCase):
     def test(self):
-        user = User.objects.create()
+        user = settings.AUTH_USER_MODEL.objects.create()
 
         # Make some test data to be sent through the create page.
         data = {

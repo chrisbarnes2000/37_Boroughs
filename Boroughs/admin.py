@@ -9,10 +9,10 @@ class photoInline(admin.TabularInline):
 
 class BoroughsAdmin(admin.ModelAdmin):
     """ Show helpful fields on the changelist page. """
-    search_fields = ['title', 'author']
-    list_filter = ['title', 'created', 'author']
+    search_fields = ['title']
+    list_filter = ['title', 'created']
 
-    list_display = ('title', 'slug', 'author',
+    list_display = ('title', 'slug',
                     'created', 'modified')
 
     admin_thumbnail = AdminThumbnail(image_field='main_img')

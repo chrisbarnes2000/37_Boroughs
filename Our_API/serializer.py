@@ -1,4 +1,5 @@
-from django.contrib.auth.models import User, Group
+# from django.contrib.auth.models import User, Group
+from django.conf import settings
 from Boroughs.models import Borough, Photo
 from rest_framework import serializers
 
@@ -17,11 +18,11 @@ class PhotoSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = User
+        model = settings.AUTH_USER_MODEL
         fields = ['url', 'username', 'email', 'groups']
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ['url', 'name']
+# class GroupSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Group
+#         fields = ['url', 'name']

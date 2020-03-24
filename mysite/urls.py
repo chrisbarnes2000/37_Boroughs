@@ -9,20 +9,20 @@ from django.views.static import serve
 from mysite.views import *
 
 from rest_framework import routers
-from Our_API.views import UserViewSet, GroupViewSet, BoroughList, BoroughDetail
+from Our_API.views import *
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
+# router.register(r'users', UserViewSet)
+# router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
     # Index/Landing Page
     path('', Index, name='index'),
 
     # Accounts app
-    path('users/', include('django.contrib.auth.urls')),
+    # path('users/', include('django.contrib.auth.urls')),
     path('users/', include('users.urls')),
-    # path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
 
     # Admin Site
     path('Admin/', admin.site.urls),
