@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from django.conf import settings
 from django.contrib.auth import logout
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail, mail_admins
@@ -12,6 +13,8 @@ from django.utils import timezone
 from django.views.generic import *
 
 from Boroughs.models import Borough, Photo
+from census import Census
+from us import states
 
 
 def logout_view(request):
@@ -84,43 +87,50 @@ class Detail_Borough_View(DetailView):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
 
-        api_key = os.getenv('Yelp_KEY')
-        headers = {'Authorization': 'Bearer %s' % api_key}
+# -------------------YELP API RENDERING-------------------------------------
 
+        api_key = os.getenv('Yelp_KEY')
+
+        headers = {'Authorization': 'Bearer %s' % api_key}
         url = 'https://api.yelp.com/v3/businesses/search'
         params = {'term': 'bookstore', 'location': 'San Francisco'}
-
         req = requests.get(url, params=params, headers=headers)
 
         parsed = json.loads(req.text)
-
         businesses = parsed["businesses"]
-
-        # Add in a QuerySet of all the businesses
-        context['Businesses'] = businesses
-        return context
-
         # for business in businesses:
-        #     print("Name:", business["name"])
-        #     print("Rating:", business["rating"])
-        #     print("Address:", " ".join(business["location"]["display_address"]))
-        #     print("Phone:", business["phone"])
-        #     print("\n")
-
         #     id = business["id"]
-
         #     url = "https://api.yelp.com/v3/businesses/" + id + "/reviews"
-
         #     req = requests.get(url, headers=headers)
-
         #     parsed = json.loads(req.text)
-
         #     reviews = parsed["reviews"]
-
         #     print("--- Reviews ---")
 
-        # 'Boroughs/display_businesses.html',
-        # return render(request, template_name, {"display": display, "Businesses": businesses})
+# -----------------CENSUS API RENDERING---------------------------------------
+
+        c = Census(os.getenv('CENSUS_KEY'))
+
+        tract = context['object'].tract
+
+        Name = c.sf1.state_county_tract(
+            'NAME', states.CA.fips, '075', tract)
+        Population = c.sf1.state_county_tract(
+            'P001001', states.CA.fips, '075', tract)
+        Housing = c.sf1.state_county_tract(
+            'H001001', states.CA.fips, '075', tract)
+
+# -----------------Add to QuerySet---------------------------------------
+
+        # Yelp context
+        context['Businesses'] = businesses
+        # context['reviews'] = reviews
+
+        # Census context
+        context['Census_Name'] = Name[0]['NAME'] + " 2010"
+        context['Census_Pop'] = '{:,}'.format(int(Population[0]['P001001']))
+        context['Census_House'] = "{:,}".format(int(Housing[0]['H001001']))
+        return context
+
 
 class Edit_Borough_View(UpdateView):
     model = Borough
