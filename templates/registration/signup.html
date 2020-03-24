@@ -1,85 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Sign Up!</h1>
-  <hr>
-      <div class="row">
-        <div class="col">
-          <form method="post" class="mx-auto">
-            {% csrf_token %}
-            <div class="form-group form-row">
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.first_name.errors }}</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="First name" name="{{ user.first_name.name }}"
-                        id="id_{{ user.first_name.name }}">
-                </div>
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.last_name.errors }}</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Last name" name="{{ user.last_name.name }}"
-                        id="id_{{ user.last_name.name }}">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.username.errors }}</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="username" name="{{ user.username.name }}"
-                        id="id_{{ user.username.name }}">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.email.errors }}</span>
-                    </div>
-                    <input type="text-form" class="form-control" placeholder="Email Address" name="{{ user.email.name }}"
-                        id="id_{{ user.email.name }}">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.password.errors }}</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="password" name="{{ user.password.name }}"
-                        id="id_{{ user.password.name }}">
-                </div>
-            </div>
-
-            <!-- <div class="form-row">
-                <div class="col">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <span class="text-danger small">{{ user.password.errors }}</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="password" name="{{ user.password.name }}"
-                        id="id_{{ user.password.name }}">
-                </div>
-            </div> -->
-
-
-            <!-- {% for field in form %}
-                {% for error in field.errors %}
-                    <p class="text-danger">{{ error }}</p>
-                {% endfor %}
-                <div class="form-group row">
-                    <div class="col-8">
-                      <label for="id_{{ field.name }}">{{ field.label|title }}:</label>
-                      <input class="form-control" type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
-                    </div>
-                </div>
-            {% endfor %} -->
-
-
-            <button type="submit" class="btn btn-success">Sign up</button>
-          </form>
-        </div>
+<div class="container" style="margin-top: 16vh;">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card" style="width: 33%">
+      <div class="d-flex justify-content-center text-upper card-header">
+        <h4 class="card-title">Sign Up</h4>
       </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+              {% for error in field.errors %}
+                  <p class="text-danger">{{ error }}</p>
+              {% endfor %}
+              <div class="form-group d-flex flex-row">
+                  <div class="col-8">
+                    <label for="id_{{ field.name }}" style="color: black">{{ field.label|title }}:</label>
+                    <input style="margin-left: 40px" class="form-control" type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
+                  </div>
+              </div>
+          {% endfor %}
+          <div class="form-group d-flex pt-3">
+            <button type="submit" value="Login" class="btn text-uppercase login_btn" style="margin: auto">Create Account</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
 {% endblock %}

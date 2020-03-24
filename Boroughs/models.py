@@ -29,7 +29,7 @@ class Borough(models.Model):
     zipcode = models.IntegerField(
         default=9401, blank=False, help_text="Add the zipcode of this borough")
     tract = models.CharField(
-        max_length=10, default='010100', blank=False, help_text="Add the tract of this borough")
+        max_length=10000, default='010100', blank=False, help_text="Add the tract of this borough")
 
     content = models.TextField(default="Write the content of your page here.")
     sources = models.URLField(null=True, blank=True)
