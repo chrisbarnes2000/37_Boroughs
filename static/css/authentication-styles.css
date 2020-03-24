@@ -62,11 +62,11 @@ html,body{
     margin-left: 4px;
     }
 
-    .input-group {
+    .login-group {
         flex-direction: column;
     }
 
-    .input-group > input {
+    .login-group > input {
         width: min-content;
         margin-left: 40px;
     }
