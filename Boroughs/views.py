@@ -109,15 +109,24 @@ class Detail_Borough_View(DetailView):
 # -----------------CENSUS API RENDERING---------------------------------------
 
         c = Census(os.getenv('CENSUS_KEY'))
+        tracts = context['object'].tract
+        Census_House = []
+        Census_Pop = []
+        Population = 0
+        Housing = 0
 
-        tract = context['object'].tract
+        for tract in tracts.split():
+            tract = tract.strip(',')
+            # Name = c.sf1.state_county_tract('NAME', states.CA.fips, '075', tract)
+            Population_json = c.sf1.state_county_tract('P001001', states.CA.fips, '075', tract)
+            pop_val = int(Population_json[0]['P001001'])
+            Census_Pop.append('{:,}'.format(pop_val))
+            Population += pop_val
 
-        Name = c.sf1.state_county_tract(
-            'NAME', states.CA.fips, '075', tract)
-        Population = c.sf1.state_county_tract(
-            'P001001', states.CA.fips, '075', tract)
-        Housing = c.sf1.state_county_tract(
-            'H001001', states.CA.fips, '075', tract)
+            Housing_json = c.sf1.state_county_tract('H001001', states.CA.fips, '075', tract)
+            house_val = int(Housing_json[0]['H001001'])
+            Census_House.append("{:,}".format(house_val))
+            Housing += house_val
 
 # -----------------Add to QuerySet---------------------------------------
 
@@ -126,9 +135,12 @@ class Detail_Borough_View(DetailView):
         # context['reviews'] = reviews
 
         # Census context
-        context['Census_Name'] = Name[0]['NAME'] + " 2010"
-        context['Census_Pop'] = '{:,}'.format(int(Population[0]['P001001']))
-        context['Census_House'] = "{:,}".format(int(Housing[0]['H001001']))
+        # context['Census_Name'] = Name[0]['NAME'] + " 2010"
+        context['Census_Pop'] = Census_Pop
+        context['Census_House'] = Census_House
+        context['Total_Population'] = Population
+        context['Total_Housing'] = Housing
+        context['tracts'] = tracts
         return context
 
 
