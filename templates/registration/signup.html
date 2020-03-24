@@ -7,7 +7,41 @@
         <div class="col">
           <form method="post" class="mx-auto">
             {% csrf_token %}
-            {% for field in form %}
+            <div class="form-group form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.first_name.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="First name" name="{{ user.first_name.name }}"
+                        id="id_{{ user.first_name.name }}">
+                </div>
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.last_name.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Last name" name="{{ user.last_name.name }}"
+                        id="id_{{ user.last_name.name }}">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.email.errors }}</span>
+                    </div>
+                    <input type="text-form" class="form-control" placeholder="Email Address" name="{{ user.email.name }}"
+                        id="id_{{ user.email.name }}">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- {% for field in form %}
                 {% for error in field.errors %}
                     <p class="text-danger">{{ error }}</p>
                 {% endfor %}
@@ -17,7 +51,9 @@
                       <input class="form-control" type="{% if "password" in field.name %}password{% else %}text{% endif %}" name="{{ field.name }}" id="id_{{ field.name }}" required>
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %} -->
+
+
             <button type="submit" class="btn btn-success">Sign up</button>
           </form>
         </div>
