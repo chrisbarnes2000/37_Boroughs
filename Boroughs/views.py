@@ -40,13 +40,13 @@ class Create_Photo_View(CreateView):
     # success_url = reverse_lazy('index')
 
     def form_valid(self, form):
-        mail_admins(
-            "New Photo For",
-            form.borough,
-            fail_silently=False,
-            connection=None,
-            html_message=None
-        )
+        # mail_admins(
+        #     "New Photo For",
+        #     [self.borough, self.image],
+        #     fail_silently=False,
+        #     connection=None,
+        #     html_message=None
+        # )
         # form.instance.author = self.request.user
         return super().form_valid(form)
 

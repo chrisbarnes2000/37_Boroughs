@@ -36,11 +36,11 @@ class Borough(models.Model):
 
     main_img = models.ImageField(upload_to='main_images/', null=True)
     main_img2 = models.ImageField(
-        upload_to='main_images/'+str(slug), null=True, blank=True)
+        upload_to='main_images/', null=True, blank=True)
     main_img3 = models.ImageField(
-        upload_to='main_images/'+str(slug), null=True, blank=True)
+        upload_to='main_images/', null=True, blank=True)
     main_img4 = models.ImageField(
-        upload_to='main_images/'+str(slug), null=True, blank=True)
+        upload_to='main_images/', null=True, blank=True)
 
     def __str__(self):
         return self.title
