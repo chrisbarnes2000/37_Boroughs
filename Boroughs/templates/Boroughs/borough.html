@@ -97,33 +97,27 @@
 <div id="accordion">
     <div id="Photos" class="collapse show" aria-labelledby="Photos-btn" data-parent="#accordion">
         <div class="card-body">
-            {% for photo in borough.photo_set.all %}
-                {% if photo.approved %}
-                    <div class="row justify-content-center">
-                        <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 75%; height: 75%;">
-                    </div>
-                {% endif %}
-            {% endfor%}
-
-            {% comment %}
             <!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
-
-            <!-- <form action="{% url 'vote' borough.slug %}" method="POST">
+            <form action="{% url 'vote' borough.slug %}" method="POST">
                 {% csrf_token %}
                 {% for photo in borough.photo_set.all %}
                     {% if photo.approved %}
                     <div class="row justify-content-center">
-                        <!-- <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%"> ->
+                        <!-- <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image"style="width: 75%; height: 75%;"> -->
                         <input type="image" class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%" name="photo" id="photo_{{ forloop.counter }}" value="{{ photo.id }}">
                     </div>
+
                     <div class="row justify-content-center">
-                        <input type="submit" value="Like">
-                        <label for="photo_{{ forloop.counter }}">{{ photo.votes }}</label>
+                        <div class="col">
+                            <label style="color:red;" for="photo_{{ forloop.counter }}">Love Votes: {{ photo.votes }}</label>
+                        </div>
+                        <div class="col">
+                            <input type="submit" value="Like">
+                        </div>
                     </div>
                     {% endif %}
                 {% endfor%}
-            </form> -->
-            {% endcomment %}
+            </form>
         </div>
     </div>
 
