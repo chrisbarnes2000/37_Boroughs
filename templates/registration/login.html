@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block style %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/authentication-styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/authentication-styles.css' %}">
 {% endblock %}
- 
+
 {% block content %}
 <div class="container" style="margin-top: 18vh">
     <div class="d-flex justify-content-center h-75">
@@ -17,7 +17,6 @@
                     <p>Your username and password didn't match. Please try again.</p>
                 {% endif %}
 
-                <!-- <p><a href="{% provider_login_url 'google' %}">Log In with Gmail</a></p> -->
 
                 {% if next %}
                     {% if user.is_authenticated %}
