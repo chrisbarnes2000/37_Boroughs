@@ -68,3 +68,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 .DS_Store
+db.sqlite3
