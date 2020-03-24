@@ -22,6 +22,17 @@
         <div class="row mt-3">
             <div class="col" style="margin-top: 3em; margin-bottom: 2em;">
                 <p>{{ borough.content|linebreaksbr }}</p>
+
+                <hr>
+                {{Census_Name}}
+                <br>
+                
+                <i class="fas fa-street-view"></i> {{Census_Pop}}
+                <br>
+                
+                <i class="fas fa-home"></i> {{Census_House}}
+                <hr>
+
                 {% if borough.sources %}
                     <a class="float-right" href="{{ borough.sources }}">More Content</a>
                 {% endif %}
@@ -30,16 +41,50 @@
                 {% if borough.main_img %}
                     <img class="img-fluid" src="{{ borough.main_img.url }}" alt="Main Borough Image" />
                 {% else %}
-                    <a href="https://placeholder.com"><img class=img-fluid" src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image"/></a>
+                    <a href="https://placeholder.com"><img class=img-fluid"
+                        src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image"/></a>
                 {% endif %}
             </div>
         </div>
+
+
+        <div class="row mt-2">
+            <div class="col text-center">
+                {% if borough.main_img2 %}
+                    <img class="img-fluid" src="{{ borough.main_img2.url }}" alt="2nd Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-fluid"
+                        src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
+                {% endif %}
+            </div>
+            
+            
+            <div class="col text-center">
+                {% if borough.main_img3 %}
+                    <img class="img-fluid" src="{{ borough.main_img3.url }}" alt="3rd Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-fluid"
+                        src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
+                {% endif %}
+            </div>
+            
+            
+            <div class="col text-center">
+                {% if borough.main_img4 %}
+                    <img class="img-fluid" src="{{ borough.main_img4.url }}" alt="4th Main Borough Image" />
+                {% else %}
+                    <a href="https://placeholder.com"><img class=img-fluid"
+                        src="https://via.placeholder.com/250x250?text=Image+of+this+place" alt="Place Holder Image" /></a>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 </div>
 
 <hr>
 
-<p>
+<p class="text-center">
     <button class="btn btn-link" id="Photos-btn" data-toggle="collapse" data-target="#Photos" aria-expanded="true" aria-controls="Photos">
         Photos
     </button>
