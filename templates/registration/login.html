@@ -27,11 +27,11 @@
                 <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}
                     <div class="input-group form-group">
-                        <label for="username">Username:</label>
+                        <label for="username" style="color:black">Username:</label>
                         <input id="username" type="text" class="form-control" placeholder="username">
                     </div>
                     <div class="input-group form-group">
-                        <label for="password">Password:</label>
+                        <label for="password" style="color:black">Password:</label>
                         <input id="password" type="password" class="form-control" placeholder="password">
                     </div>
                     <div class="form-group d-flex float-right mb-0">

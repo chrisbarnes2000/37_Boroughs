@@ -61,3 +61,12 @@ html,body{
     .links a{
     margin-left: 4px;
     }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group > input {
+        width: min-content;
+        margin-left: 40px;
+    }
