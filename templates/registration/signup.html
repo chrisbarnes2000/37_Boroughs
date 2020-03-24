@@ -23,7 +23,17 @@
                         id="id_{{ user.last_name.name }}">
                 </div>
             </div>
-            
+
+            <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.username.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="username" name="{{ user.username.name }}"
+                        id="id_{{ user.username.name }}">
+                </div>
+            </div>
+
             <div class="form-row">
                 <div class="col">
                     <div class="col-sm-offset-2 col-sm-10">
@@ -34,11 +44,25 @@
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.password.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="password" name="{{ user.password.name }}"
+                        id="id_{{ user.password.name }}">
+                </div>
+            </div>
 
-
-
-
-
+            <!-- <div class="form-row">
+                <div class="col">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{ user.password.errors }}</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="password" name="{{ user.password.name }}"
+                        id="id_{{ user.password.name }}">
+                </div>
+            </div> -->
 
 
             <!-- {% for field in form %}
