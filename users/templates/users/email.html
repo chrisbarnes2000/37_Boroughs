@@ -1,0 +1,13 @@
+<!-- users/email.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Contact Us</h1>
+<form action="https://formspree.io/xbjkqvog" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button type="submit">Send</button>
+    </div>
+</form>
+{% endblock %}

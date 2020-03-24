@@ -6,6 +6,9 @@
 
 {% block content %}
 <div class="row">
+    <div class="col mt-5 pt-3">
+        <img class="img-fluid image-responsive" src="{% static 'images/contribute.png' %}" alt="Contribute">
+    </div>
     <div class="col">
         <h1 class="text-center" style="margin-top: 60px;">We Need Your Pictures!</h1>
         <p class="mb-6">Please provide us with context related to this photo, it can be as simple as I was out in this area and took a cool photo id like to share.
@@ -61,8 +64,7 @@
             </div>
         </form>
     </div>
-    <div class="col mt-5 pt-3">
-        <img src="{% static 'images/contribute.png' %}" class="img-fluid" alt="Contribute">
-    </div>
+
+
 </div>
 {% endblock %}

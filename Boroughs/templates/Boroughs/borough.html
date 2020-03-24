@@ -100,7 +100,7 @@
             {% for photo in borough.photo_set.all %}
                 {% if photo.approved %}
                     <div class="row justify-content-center">
-                        <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 25%">
+                        <img class="img-fluid" src="{{ photo.image.url }}" alt="User Uploaded Image" style="width: 75%; height: 75%;">
                     </div>
                 {% endif %}
             {% endfor%}

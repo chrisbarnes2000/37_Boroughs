@@ -51,6 +51,8 @@ class Create_Photo_View(CreateView):
         return super().form_valid(form)
 
 
+# Msg.attach(‘file_name.type’, content, ‘MIME / type’) 
+
 # def vote(request, borough_slug):
 #     borough = get_object_or_404(Borough, slug=borough_slug)
 #     try:
