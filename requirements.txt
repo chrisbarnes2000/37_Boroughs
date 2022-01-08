@@ -19,7 +19,7 @@ django-filter==2.2.0
 django-imagekit==4.0.2
 django-restframework==0.0.1
 django-storages==1.9.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docutils==0.15.2
 entrypoints==0.3
 filelock==3.0.12
