@@ -1,15 +1,18 @@
 #mysite URL Configuration
-from django.contrib import admin
-from django.conf.urls import url
-from django.urls import include, path, re_path
-
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path, re_path
 from django.views.static import serve
+from Our_API.views import *
+from rest_framework import routers
+
 from mysite.views import *
 
-from rest_framework import routers
-from Our_API.views import *
+# handler400 = 'mysite.views.my_custom_bad_request_view'
+# handler403 = 'mysite.views.my_custom_permission_denied_view'
+# handler404 = 'mysite.views.my_custom_page_not_found_view'
+# handler500 = 'mysite.views.my_custom_error_view'
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
